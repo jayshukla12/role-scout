@@ -44,3 +44,7 @@ jobs:
             git add data/scouted_roles.json
             # Only commit if there are changes
             git diff --quiet && git diff --staged --quiet || (git commit -m "Automated job scout update" && git push)
+          else
+            echo "No data/scouted_roles.json file was generated during this run."
+          fi
+
