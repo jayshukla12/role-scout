@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Role Scout: Jay's Personal Dashboard</title>
+    <title>Role Scout Agent - Jay's Job Dashboard</title>
+    <meta name="description" content="AI-powered job scouting agent finding the most relevant roles for Jay.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -17,14 +18,10 @@
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --gold: #f59e0b;
+            --card-hover-border: rgba(59, 130, 246, 0.3);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
 
         body {
             background: var(--bg-gradient);
@@ -36,203 +33,282 @@
         }
 
         header {
-            max-width: 1000px;
-            margin: 0 auto 2rem auto;
+            max-width: 860px;
+            margin: 0 auto 1.5rem auto;
             text-align: center;
             animation: fadeIn 0.8s ease-out;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             background: linear-gradient(to right, #93c5fd, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
 
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
+        .subtitle { color: var(--text-muted); font-size: 0.95rem; }
 
         .controls {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1000px;
-            margin: 0 auto 2rem auto;
+            max-width: 860px;
+            margin: 0 auto 1.5rem auto;
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            animation: fadeIn 1s ease-out;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
         }
 
         .status-badge {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #cbd5e1;
         }
 
         .pulse {
             display: inline-block;
-            width: 8px;
-            height: 8px;
+            width: 7px; height: 7px;
             border-radius: 50%;
             background: var(--accent);
-            box-shadow: 0 0 0 rgba(16, 185, 129, 0.4);
             animation: pulse-anim 2s infinite;
         }
 
         select {
-            padding: 0.6rem 1rem;
-            border-radius: 8px;
-            background: rgba(0, 0, 0, 0.4);
+            padding: 0.45rem 0.8rem;
+            border-radius: 7px;
+            background: rgba(0,0,0,0.4);
             border: 1px solid var(--glass-border);
             color: white;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
             outline: none;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
+        .container { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
 
+        /* ─── CARD ─── */
         .job-card {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
             box-shadow: var(--glass-shadow);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            animation: slideUp 0.5s ease-out forwards;
+            transition: border-color 0.2s ease;
+            animation: slideUp 0.4s ease-out forwards;
             opacity: 0;
         }
 
-        .job-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(59, 130, 246, 0.4);
-        }
+        .job-card:hover { border-color: var(--card-hover-border); }
 
+        /* ─── CARD HEADER ─── */
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1rem;
-            gap: 1rem;
+            gap: 0.75rem;
         }
+
+        .card-number {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            padding: 0.2rem 0.5rem;
+            flex-shrink: 0;
+            align-self: flex-start;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+
+        .card-header-left { flex: 1; min-width: 0; }
 
         .job-title {
-            font-size: 1.5rem;
+            font-size: 1.05rem;
             font-weight: 600;
             color: #fff;
-            line-height: 1.3;
+            line-height: 1.35;
+            margin-bottom: 0.4rem;
         }
 
-        .meta-tags {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-            flex-wrap: wrap;
-        }
+        .meta-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 
         .tag {
-            background: rgba(255,255,255,0.1);
-            padding: 0.2rem 0.8rem;
+            background: rgba(255,255,255,0.08);
+            padding: 0.15rem 0.65rem;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #cbd5e1;
         }
 
         .score-circle {
-            width: 60px;
-            height: 60px;
+            width: 48px; height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             background: rgba(0,0,0,0.4);
-            border: 3px solid;
+            border: 2.5px solid;
             flex-shrink: 0;
         }
 
         .score-high { border-color: var(--accent); color: var(--accent); }
-        .score-med { border-color: var(--gold); color: var(--gold); }
+        .score-med  { border-color: var(--gold);   color: var(--gold);   }
+        .score-low  { border-color: #ef4444;        color: #ef4444;       }
 
-        .tip-section {
-            background: rgba(0, 0, 0, 0.2);
-            border-left: 4px solid var(--primary);
-            padding: 1.2rem;
-            border-radius: 0 8px 8px 0;
-            margin: 1.5rem 0;
-        }
-
-        .tip-header {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .tip-text {
-            color: #e2e8f0;
-            font-size: 0.95rem;
+        /* ─── ROLE SUMMARY (always visible) ─── */
+        .role-summary {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-top: 0.75rem;
             line-height: 1.6;
+        }
+
+        /* ─── COLLAPSIBLE ROWS ─── */
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            cursor: pointer;
+            user-select: none;
+            width: fit-content;
+        }
+
+        .toggle-row:hover .toggle-label { color: #e2e8f0; }
+
+        .toggle-icon {
+            font-size: 0.9rem;
+            width: 22px; height: 22px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.07);
+            flex-shrink: 0;
+        }
+
+        .toggle-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .toggle-chevron {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            transition: transform 0.2s;
+            margin-left: 2px;
+        }
+
+        .toggle-chevron.open { transform: rotate(180deg); }
+
+        /* ─── COLLAPSIBLE BODY ─── */
+        .collapsible {
+            display: none;
+            margin-top: 0.6rem;
+            padding: 0.9rem 1rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        .collapsible.open { display: block; }
+
+        /* Agent Intelligence sub-sections */
+        .intel-block { margin-bottom: 0.8rem; }
+        .intel-block:last-child { margin-bottom: 0; }
+
+        .intel-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--accent);
+            margin-bottom: 0.3rem;
+        }
+
+        .intel-text {
+            font-size: 0.88rem;
+            color: #e2e8f0;
+            line-height: 1.65;
+        }
+
+        /* Requirements */
+        .req-text {
+            font-size: 0.88rem;
+            color: #e2e8f0;
+            line-height: 1.65;
+        }
+
+        /* ─── CARD FOOTER ─── */
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 0.9rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         .btn {
             display: inline-block;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
+            padding: 0.5rem 1.1rem;
+            border-radius: 7px;
             background: var(--primary);
             color: white;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
             background: var(--primary-hover);
-            transform: scale(1.02);
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
         }
 
-        .loader {
-            text-align: center;
-            padding: 3rem;
+        /* ─── PAGINATION ─── */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .page-btn {
+            padding: 0.4rem 0.9rem;
+            border-radius: 7px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid var(--glass-border);
             color: var(--text-muted);
-            font-size: 1.2rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
         }
 
-        @keyframes pulse-anim {
-            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-        }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+        .page-btn:hover:not(:disabled) { background: rgba(59,130,246,0.15); color: var(--primary); border-color: rgba(59,130,246,0.3); }
+        .page-btn:disabled { opacity: 0.35; cursor: default; }
+        .page-info { font-size: 0.85rem; color: var(--text-muted); }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
-        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
-        
+        /* ─── MISC ─── */
+        .loader { text-align: center; padding: 3rem; color: var(--text-muted); }
+
         .empty-state {
             text-align: center;
             padding: 4rem;
@@ -241,125 +317,186 @@
             border: 1px dashed rgba(255,255,255,0.2);
         }
 
+        @keyframes pulse-anim {
+            0%   { box-shadow: 0 0 0 0 rgba(16,185,129,0.7); }
+            70%  { box-shadow: 0 0 0 8px rgba(16,185,129,0); }
+            100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+        }
+        @keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { to   { opacity: 1; transform: translateY(0); } }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+            .controls { flex-direction: column; gap: 0.75rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Autonomous Job Scout</h1>
-        <p class="subtitle">Scouting Google India roles matching Jay's Context</p>
+        <h1>Role Scout Agent</h1>
+        <p class="subtitle">AI powered personalized role scouting agent for Jay</p>
     </header>
 
     <div class="controls">
         <div class="status-badge">
-            <span class="pulse"></span> Latest JSON Synced
+            <span class="pulse"></span> Latest sync loaded
         </div>
         <div>
-            <select id="sortSelect" onchange="renderJobs()">
-                <option value="score">Sort by: Relevance Score</option>
-                <option value="recent">Sort by: Most Recent</option>
+            <select id="sortSelect" onchange="currentPage=1; renderJobs()">
+                <option value="score_recency">Sort: Score (recency tiebreak)</option>
+                <option value="score">Sort: Highest Score</option>
             </select>
         </div>
     </div>
 
     <div class="container" id="jobsContainer">
-        <div class="loader">Loading latest agent sync...</div>
+        <div class="loader">Loading roles…</div>
     </div>
 
     <script>
         let allJobs = [];
-
-        // Common relative path to GitHub Pages or Local data struct
+        let currentPage = 1;
+        const ROLES_PER_PAGE = 5;
         const DATA_URL = "data/scouted_roles.json";
 
         async function fetchJobs() {
             try {
-                // To prevent caching issues
-                const response = await fetch(`${DATA_URL}?t=${new Date().getTime()}`);
-                if (!response.ok) throw new Error("Could not load roles database.");
-                
-                allJobs = await response.json();
+                const res = await fetch(`${DATA_URL}?t=${Date.now()}`);
+                if (!res.ok) throw new Error();
+                allJobs = await res.json();
                 renderJobs();
-            } catch (err) {
-                console.error(err);
+            } catch {
                 document.getElementById('jobsContainer').innerHTML = `
                     <div class="empty-state">
-                        <h2 style="color:var(--text-muted);">Database Empty or Unreachable</h2>
-                        <p style="margin-top:1rem;color:#64748b;">The automated GitHub Action may not have completed its first run yet, or there are no jobs matching the >50% criteria.</p>
-                    </div>
-                `;
+                        <h2 style="color:var(--text-muted)">No roles loaded</h2>
+                        <p style="margin-top:.75rem;color:#64748b">Run the scout agent to populate results.</p>
+                    </div>`;
             }
         }
 
-        function extractDaysAgo(dateStr) {
-            if (!dateStr) return 999; 
-            const text = dateStr.toLowerCase();
-            if (text.includes("today") || text.includes("hour")) return 0;
-            const match = text.match(/(\\d+)\\s+day/);
-            if (match) return parseInt(match[1]);
-            const matchMonth = text.match(/(\\d+)\\s+month/);
-            if (matchMonth) return parseInt(matchMonth[1]) * 30;
+        function daysAgo(str) {
+            if (!str) return 999;
+            const t = str.toLowerCase();
+            if (t.includes('today') || t.includes('hour')) return 0;
+            const d = t.match(/(\d+)\s+day/);    if (d) return +d[1];
+            const w = t.match(/(\d+)\s+week/);   if (w) return +w[1] * 7;
+            const m = t.match(/(\d+)\s+month/);  if (m) return +m[1] * 30;
             return 999;
+        }
+
+        function toggle(colId, chevId) {
+            const col = document.getElementById(colId);
+            const chev = document.getElementById(chevId);
+            col.classList.toggle('open');
+            chev.classList.toggle('open');
         }
 
         function renderJobs() {
             const container = document.getElementById('jobsContainer');
             container.innerHTML = '';
 
-            if (allJobs.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <h2 style="color:var(--text-muted);">No Active Matches</h2>
-                        <p style="margin-top:1rem;color:#64748b;">The agent didn't find any roles scoring >50% in the last scrape.</p>
-                    </div>
-                `;
+            if (!allJobs.length) {
+                container.innerHTML = `<div class="empty-state"><h2 style="color:var(--text-muted)">No matches yet</h2></div>`;
                 return;
             }
 
             const sortBy = document.getElementById('sortSelect').value;
+            let sorted = [...allJobs];
+            // Primary: score descending. Secondary: if date is known, newer ranks higher within same score band.
+            sorted.sort((a, b) => {
+                const scoreDiff = (b.relevance_score || 0) - (a.relevance_score || 0);
+                if (scoreDiff !== 0) return scoreDiff;
+                // Tiebreak: prefer roles with a known date, and prefer more recent
+                const da = daysAgo(a.date_published), db = daysAgo(b.date_published);
+                if (da === 999 && db !== 999) return 1;   // b has date, rank it higher
+                if (db === 999 && da !== 999) return -1;  // a has date, rank it higher
+                return da - db; // both have dates: fewer days ago = higher
+            });
 
-            // Sort logic
-            let sortedJobs = [...allJobs];
-            if (sortBy === 'score') {
-                sortedJobs.sort((a, b) => (b.relevance_score || 0) - (a.relevance_score || 0));
-            } else if (sortBy === 'recent') {
-                sortedJobs.sort((a, b) => extractDaysAgo(a.date_published) - extractDaysAgo(b.date_published));
-            }
+            const totalPages = Math.ceil(sorted.length / ROLES_PER_PAGE);
+            if (currentPage > totalPages) currentPage = totalPages;
+            const startIndex = (currentPage - 1) * ROLES_PER_PAGE;
+            const page = sorted.slice(startIndex, startIndex + ROLES_PER_PAGE);
 
-            sortedJobs.forEach((job, index) => {
+            page.forEach((job, i) => {
+                const globalRank = startIndex + i + 1;
                 const score = job.relevance_score || 0;
-                const scoreClass = score >= 80 ? 'score-high' : 'score-med';
+                const scoreClass = score >= 80 ? 'score-high' : score >= 60 ? 'score-med' : 'score-low';
+                const id = (job.id || `job-${i}`).replace(/[^a-z0-9]/gi, '-');
+                const whyFit = job.why_good_fit || job.tip_to_score || '';
+                const howWin = job.how_to_win || '';
+                const keyReqs = job.key_requirements || '';
+                const summary = job.role_summary || '';
+                const hasIntel = whyFit || howWin;
+                const hasReqs  = !!keyReqs;
 
                 const card = document.createElement('div');
                 card.className = 'job-card';
-                card.style.animationDelay = `${index * 0.1}s`;
+                card.style.animationDelay = `${i * 0.07}s`;
 
                 card.innerHTML = `
                     <div class="card-header">
-                        <div>
-                            <div class="job-title">${job.title || "Unknown Title"}</div>
+                        <span class="card-number">#${globalRank}</span>
+                        <div class="card-header-left">
+                            <div class="job-title">${job.title || 'Unknown Role'}</div>
                             <div class="meta-tags">
-                                <span class="tag">📅 ${job.date_published || "Recency Unknown"}</span>
-                                <span class="tag">📍 India</span>
+                                <span class="tag">🏢 ${job.company || 'Google'}</span>
+                                <span class="tag">📍 ${job.location || 'India'}</span>
                             </div>
                         </div>
-                        <div class="score-circle ${scoreClass}">${score}%</div>
+                        <div class="score-circle ${scoreClass}">${score}</div>
                     </div>
 
-                    <div class="tip-section">
-                        <div class="tip-header">Agent Tip: How to pitch yourself</div>
-                        <div class="tip-text">${job.tip_to_score || "No specific tips generated for this role."}</div>
-                    </div>
+                    ${summary ? `<div class="role-summary">${summary}</div>` : ''}
 
-                    <div style="text-align: right; margin-top: 1.5rem;">
+                    ${hasIntel ? `
+                    <div class="toggle-row" onclick="toggle('intel-${id}','chev-intel-${id}')">
+                        <span class="toggle-icon">🤖</span>
+                        <span class="toggle-label">Agent Intelligence</span>
+                        <span class="toggle-chevron" id="chev-intel-${id}">▼</span>
+                    </div>
+                    <div class="collapsible" id="intel-${id}">
+                        ${whyFit ? `<div class="intel-block"><div class="intel-label">Why you're a fit</div><div class="intel-text">${whyFit}</div></div>` : ''}
+                        ${howWin ? `<div class="intel-block"><div class="intel-label">How to win this role</div><div class="intel-text">${howWin}</div></div>` : ''}
+                    </div>` : ''}
+
+                    ${hasReqs ? `
+                    <div class="toggle-row" onclick="toggle('reqs-${id}','chev-reqs-${id}')">
+                        <span class="toggle-icon">📋</span>
+                        <span class="toggle-label">Key Requirements</span>
+                        <span class="toggle-chevron" id="chev-reqs-${id}">▼</span>
+                    </div>
+                    <div class="collapsible" id="reqs-${id}">
+                        <div class="req-text">${Array.isArray(keyReqs) ? keyReqs.map(r => `• ${r}`).join('<br>') : keyReqs}</div>
+                    </div>` : ''}
+
+                    <div class="card-footer">
                         <a href="${job.url}" target="_blank" class="btn">View & Apply →</a>
                     </div>
                 `;
                 container.appendChild(card);
             });
+
+            if (totalPages > 1) {
+                const pag = document.createElement('div');
+                pag.className = 'pagination';
+                pag.innerHTML = `
+                    <button class="page-btn" id="prevBtn" ${currentPage === 1 ? 'disabled' : ''}>← Prev</button>
+                    <span class="page-info">Page ${currentPage} of ${totalPages} &nbsp;·&nbsp; ${sorted.length} roles</span>
+                    <button class="page-btn" id="nextBtn" ${currentPage === totalPages ? 'disabled' : ''}>Next →</button>
+                `;
+                container.appendChild(pag);
+                document.getElementById('prevBtn')?.addEventListener('click', () => { currentPage--; renderJobs(); scrollTo({top:0,behavior:'smooth'}); });
+                document.getElementById('nextBtn')?.addEventListener('click', () => { currentPage++; renderJobs(); scrollTo({top:0,behavior:'smooth'}); });
+            }
         }
 
-        // Initialize
         window.onload = fetchJobs;
     </script>
 </body>
