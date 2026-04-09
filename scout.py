@@ -1,7 +1,3 @@
-scout.py
-
-
-
 import asyncio
 import os
 import re
