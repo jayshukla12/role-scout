@@ -728,8 +728,8 @@ Each object must follow this exact schema:
     try:
         client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
         message = client.messages.create(
-            model="claude-3-5-sonnet-20240620",
-            max_tokens=16000,
+            model="claude-3-5-sonnet-latest",
+            max_tokens=8192,
             temperature=0.2,
             messages=[{"role": "user", "content": prompt}]
         )
