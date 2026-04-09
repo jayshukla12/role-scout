@@ -1,5 +1,10 @@
+scout.py
+
+
+
 import asyncio
 import os
+import re
 import json
 import urllib.request
 from datetime import datetime
@@ -15,7 +20,16 @@ async def scrape_jobs():
     print(f"Scraping jobs from {TARGET_URL}...")
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        )
+        await context.add_cookies([{
+            "name": "CONSENT",
+            "value": "YES+cb.20230501-14-p0.en+FX+414",
+            "domain": ".google.com",
+            "path": "/"
+        }])
+        page = await context.new_page()
         
         await page.goto(TARGET_URL, wait_until="networkidle", timeout=60000)
         await page.wait_for_timeout(5000)
@@ -105,14 +119,15 @@ Format of each object:
             ai_data = json.loads(response.read().decode('utf-8'))
             
         raw_response = ai_data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        print("Raw Gemini Response received.")
         
-        if raw_response.startswith("```json"):
-            raw_response = raw_response[7:]
-        if raw_response.startswith("```"):
-            raw_response = raw_response[3:]
-        if raw_response.endswith("```"):
-            raw_response = raw_response[:-3]
-        return json.loads(raw_response.strip())
+        # Safely extract the JSON array using Regex
+        match = re.search(r'\[.*\]', raw_response, re.DOTALL)
+        if match:
+            return json.loads(match.group(0))
+        else:
+            print("Gemini did not return a valid JSON array.")
+            return []
         
     except Exception as e:
         print("REST API Call failed or JSON parsing failed.")
@@ -166,3 +181,4 @@ async def main():
     print(f"Successfully saved {len(final_list)} jobs to {OUTPUT_FILE}")
 if __name__ == "__main__":
     asyncio.run(main())
+    
