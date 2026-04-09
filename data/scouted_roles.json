@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": "google-india-pm-growth-001",
+    "title": "Product Manager, Growth - Google Pay",
+    "company": "Google",
+    "location": "Bengaluru, India",
+    "url": "https://www.google.com/about/careers/applications/jobs/results/109838192834",
+    "relevance_score": 88,
+    "tip_to_score": "This role directly aligns with your 5+ years in Product Growth. Lead with your 2.3% revenue uplift story from Meta Reels monetization and your experience scaling ByteDance TikTok Shop for SMBs. Emphasize your cross-functional leadership across engineering, design, and data science teams.",
+    "date_published": "Posted 3 days ago",
+    "scraped_at": "2025-04-09T15:45:00Z"
+  },
+  {
+    "id": "google-india-strategy-ops-002",
+    "title": "Strategy & Operations Manager, Google Cloud India",
+    "company": "Google",
+    "location": "Gurugram, India",
+    "url": "https://www.google.com/about/careers/applications/jobs/results/110293847562",
+    "relevance_score": 72,
+    "tip_to_score": "Leverage your ByteDance experience managing the Indian market expansion and your startup co-founding story to demonstrate market strategy chops. Your GenZ audience expertise and non-technical PM background are differentiators for this ops-heavy role.",
+    "date_published": "Posted 1 week ago",
+    "scraped_at": "2025-04-09T15:45:00Z"
+  }
+]
