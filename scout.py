@@ -10,7 +10,7 @@ if not API_KEY:
     print("Error: GEMINI_API_KEY environment variable not set.")
     exit(1)
 genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel('gemini-1.5-pro-latest')  # Using Pro for better reading comprehension of the comprehensive context
+model = genai.GenerativeModel('gemini-1.5-flash')  # Using 1.5 Flash for high speed, large context, and free tier compatibility
 TARGET_URL = "https://www.google.com/about/careers/applications/jobs/results?location=India"
 CONTEXT_FILE = "jay_professional_context_v1.md"
 OUTPUT_FILE = "data/scouted_roles.json"
