@@ -1,3 +1,9 @@
+
+
+scout.py
+
+
+
 import asyncio
 import os
 import json
@@ -10,7 +16,17 @@ if not API_KEY:
     print("Error: GEMINI_API_KEY environment variable not set.")
     exit(1)
 genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')  # Using 1.5 Flash for high speed, large context, and free tier compatibility
+# Dynamically find the best available model to prevent 404 errors
+available_models = [m.name for m in genai.list_models() if 'generateContent' in m.supported_generation_methods]
+target_model = next((m for m in available_models if '1.5-flash' in m), None)
+if not target_model:
+    target_model = next((m for m in available_models if '1.5-pro' in m), None)
+if not target_model:
+    target_model = next((m for m in available_models if 'gemini-pro' in m), available_models[0])
+# Strip 'models/' prefix depending on SDK expectations
+clean_model_name = target_model.replace('models/', '')
+print(f"Dynamically selected model: {clean_model_name}")
+model = genai.GenerativeModel(clean_model_name)
 TARGET_URL = "https://www.google.com/about/careers/applications/jobs/results?location=India"
 CONTEXT_FILE = "jay_professional_context_v1.md"
 OUTPUT_FILE = "data/scouted_roles.json"
