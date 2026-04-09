@@ -69,8 +69,8 @@ YOUR TASK:
 3. FILTERS:
    - Check the date in the job text. If it is older than 3 months, DISCARD IT.
    - Calculate a 'relevance_score' (0-100) based on how well the job requirements match Jay's ENTIRE comprehensive profile. 
-   - If the relevance_score is less than 50 or if it's a strongly technical/engineering role, DISCARD IT.
-4. For the surviving jobs (score >= 50 and < 3 months old), generate a "tip_to_score". This must explicitly reference specific stories or data from his timeline.
+   - Temporarily, KEEP ALL JOBS regardless of score so we can verify the pipeline.
+4. For all jobs, generate a "tip_to_score". This must explicitly reference specific stories or data from his timeline.
 5. Ensure a robust JSON schema for future scaling.
 CANDIDATE CONTEXT:
 {context_text}
