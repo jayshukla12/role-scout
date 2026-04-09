@@ -1,15 +1,12 @@
 name: Autonomous Job Scout
-
 on:
   schedule:
     # Runs at 00:00 and 12:00 UTC every day (twice a day)
     - cron: '0 0,12 * * *'
   # Allow manual trigger from the GitHub UI Actions tab
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   scout-jobs:
     runs-on: ubuntu-latest
@@ -17,25 +14,20 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install playwright google-generativeai asyncio
-
+          pip install playwright asyncio
       - name: Install Playwright browsers
         run: python -m playwright install chromium
-
       - name: Run Background Scout
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scout.py
-
       - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -47,4 +39,3 @@ jobs:
           else
             echo "No data/scouted_roles.json file was generated during this run."
           fi
-
