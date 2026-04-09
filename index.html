@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Role Scout: Jay's Personal Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #020617 0%, #172554 100%);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --accent: #10b981;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --gold: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 2rem;
+            line-height: 1.6;
+            background-attachment: fixed;
+        }
+
+        header {
+            max-width: 1000px;
+            margin: 0 auto 2rem auto;
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #93c5fd, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto 2rem auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        .pulse {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 rgba(16, 185, 129, 0.4);
+            animation: pulse-anim 2s infinite;
+        }
+
+        select {
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--glass-border);
+            color: white;
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .job-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--glass-shadow);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            animation: slideUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .job-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .meta-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #cbd5e1;
+        }
+
+        .score-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: rgba(0,0,0,0.4);
+            border: 3px solid;
+            flex-shrink: 0;
+        }
+
+        .score-high { border-color: var(--accent); color: var(--accent); }
+        .score-med { border-color: var(--gold); color: var(--gold); }
+
+        .tip-section {
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 4px solid var(--primary);
+            padding: 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .tip-header {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-text {
+            color: #e2e8f0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .loader {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        @keyframes pulse-anim {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
+        
+        .empty-state {
+            text-align: center;
+            padding: 4rem;
+            background: var(--glass-bg);
+            border-radius: 16px;
+            border: 1px dashed rgba(255,255,255,0.2);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Autonomous Job Scout</h1>
+        <p class="subtitle">Scouting Google India roles matching Jay's Context</p>
+    </header>
+
+    <div class="controls">
+        <div class="status-badge">
+            <span class="pulse"></span> Latest JSON Synced
+        </div>
+        <div>
+            <select id="sortSelect" onchange="renderJobs()">
+                <option value="score">Sort by: Relevance Score</option>
+                <option value="recent">Sort by: Most Recent</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="container" id="jobsContainer">
+        <div class="loader">Loading latest agent sync...</div>
+    </div>
+
+    <script>
+        let allJobs = [];
+
+        // Common relative path to GitHub Pages or Local data struct
+        const DATA_URL = "data/scouted_roles.json";
+
+        async function fetchJobs() {
+            try {
+                // To prevent caching issues
+                const response = await fetch(`${DATA_URL}?t=${new Date().getTime()}`);
+                if (!response.ok) throw new Error("Could not load roles database.");
+                
+                allJobs = await response.json();
+                renderJobs();
+            } catch (err) {
+                console.error(err);
+                document.getElementById('jobsContainer').innerHTML = `
+                    <div class="empty-state">
+                        <h2 style="color:var(--text-muted);">Database Empty or Unreachable</h2>
+                        <p style="margin-top:1rem;color:#64748b;">The automated GitHub Action may not have completed its first run yet, or there are no jobs matching the >50% criteria.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function extractDaysAgo(dateStr) {
+            if (!dateStr) return 999; 
+            const text = dateStr.toLowerCase();
+            if (text.includes("today") || text.includes("hour")) return 0;
+            const match = text.match(/(\\d+)\\s+day/);
+            if (match) return parseInt(match[1]);
+            const matchMonth = text.match(/(\\d+)\\s+month/);
+            if (matchMonth) return parseInt(matchMonth[1]) * 30;
+            return 999;
+        }
+
+        function renderJobs() {
+            const container = document.getElementById('jobsContainer');
+            container.innerHTML = '';
+
+            if (allJobs.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h2 style="color:var(--text-muted);">No Active Matches</h2>
+                        <p style="margin-top:1rem;color:#64748b;">The agent didn't find any roles scoring >50% in the last scrape.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const sortBy = document.getElementById('sortSelect').value;
+
+            // Sort logic
+            let sortedJobs = [...allJobs];
+            if (sortBy === 'score') {
+                sortedJobs.sort((a, b) => (b.relevance_score || 0) - (a.relevance_score || 0));
+            } else if (sortBy === 'recent') {
+                sortedJobs.sort((a, b) => extractDaysAgo(a.date_published) - extractDaysAgo(b.date_published));
+            }
+
+            sortedJobs.forEach((job, index) => {
+                const score = job.relevance_score || 0;
+                const scoreClass = score >= 80 ? 'score-high' : 'score-med';
+
+                const card = document.createElement('div');
+                card.className = 'job-card';
+                card.style.animationDelay = `${index * 0.1}s`;
+
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div>
+                            <div class="job-title">${job.title || "Unknown Title"}</div>
+                            <div class="meta-tags">
+                                <span class="tag">📅 ${job.date_published || "Recency Unknown"}</span>
+                                <span class="tag">📍 India</span>
+                            </div>
+                        </div>
+                        <div class="score-circle ${scoreClass}">${score}%</div>
+                    </div>
+
+                    <div class="tip-section">
+                        <div class="tip-header">Agent Tip: How to pitch yourself</div>
+                        <div class="tip-text">${job.tip_to_score || "No specific tips generated for this role."}</div>
+                    </div>
+
+                    <div style="text-align: right; margin-top: 1.5rem;">
+                        <a href="${job.url}" target="_blank" class="btn">View & Apply →</a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Initialize
+        window.onload = fetchJobs;
+    </script>
+</body>
+</html>
