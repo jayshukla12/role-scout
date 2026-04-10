@@ -589,7 +589,12 @@ async def scrape_openai_jobs():
     return all_jobs
 
 async def scrape_sarvam_jobs():
-    """Scrape Sarvam AI Careers for open positions."""
+    """Scrape Sarvam AI Careers for open positions.
+    
+    Sarvam's careers page (sarvam.ai/careers#positions) renders job listings
+    as <a> tags linking to /careers/jobs/{id}. The link text contains the title,
+    location, employment type, and work mode concatenated together.
+    """
     print(f"\n[Sarvam AI] Scraping careers page...")
     all_jobs = []
 
@@ -603,62 +608,62 @@ async def scrape_sarvam_jobs():
         page = await ctx.new_page()
 
         try:
-            await page.goto(SARVAM_URL, wait_until="domcontentloaded", timeout=60000)
+            await page.goto(SARVAM_URL + "#positions", wait_until="domcontentloaded", timeout=60000)
 
-            # Wait for JS-rendered content
+            # Wait for the job links to render
             try:
-                await page.wait_for_selector("#positions, a[href*='/careers/'], a[href*='lever.co'], a[href*='greenhouse.io'], a[href*='ashbyhq.com']", timeout=12000)
+                await page.wait_for_selector("a[href*='/careers/jobs/']", timeout=15000)
             except:
-                pass
+                print("  Warning: Could not find job links via selector, continuing...")
 
             await page.wait_for_timeout(3000)
 
+            # Focused extraction: target only /careers/jobs/{id} links
             sarvam_extract_js = '''() => {
                 const jobs = [];
                 const seen = new Set();
+                const links = document.querySelectorAll("a[href*='/careers/jobs/']");
 
-                // Strategy 1: find job links — Sarvam may use Lever, Greenhouse, or internal paths
-                const jobLinkPatterns = ['/careers/', 'lever.co', 'greenhouse.io', 'ashbyhq.com', 'jobs.'];
-                const allLinks = document.querySelectorAll("a[href]");
-
-                allLinks.forEach(link => {
+                links.forEach(link => {
                     const href = link.href;
                     if (!href || seen.has(href)) return;
-
-                    const isJobLink = jobLinkPatterns.some(p => href.includes(p));
-                    // Skip generic page links (e.g. /careers without slug, search pages)
-                    if (!isJobLink) return;
-                    if (href.endsWith('/careers') || href.endsWith('/careers/') || href.includes('/careers#')) return;
-
                     seen.add(href);
 
-                    const card = link.closest("li, article, [role='listitem'], div") || link;
-                    const titleEl = card.querySelector("h2, h3, h4");
-                    const title = (titleEl || link).innerText.trim();
-                    const locEl = card.querySelector("[class*='location'], [class*='department'], span");
-                    const location = locEl ? locEl.innerText.trim() : "India";
-                    const text = card.innerText.replace(/\\s+/g, " ").trim().substring(0, 1500);
+                    // The link text is typically: "TitleLocationTypeModeTag"
+                    // e.g. "Product ManagerBengaluru, Karnataka, IndiaFull TimeOn-Site"
+                    const rawText = link.innerText.trim();
+                    if (!rawText) return;
 
-                    if (title && href) {
-                        jobs.push({ title, location, url: href, text });
+                    // Extract title: everything before the first location marker
+                    // Common Indian locations start with city names
+                    const locMarkers = [
+                        "Bengaluru", "Bangalore", "Mumbai", "Delhi", "Hyderabad",
+                        "Chennai", "Pune", "Gurgaon", "Gurugram", "Noida",
+                        "Kolkata", "India", "Remote"
+                    ];
+                    
+                    let title = rawText;
+                    let location = "India";
+                    
+                    for (const marker of locMarkers) {
+                        const idx = rawText.indexOf(marker);
+                        if (idx > 0) {
+                            title = rawText.substring(0, idx).trim();
+                            // Extract location up to "Full Time" or "Part Time" or end
+                            const afterTitle = rawText.substring(idx);
+                            const typeIdx = afterTitle.search(/Full Time|Part Time|Contract/i);
+                            location = typeIdx > 0 ? afterTitle.substring(0, typeIdx).trim() : afterTitle.trim();
+                            break;
+                        }
                     }
+
+                    jobs.push({
+                        title: title,
+                        location: location,
+                        url: href,
+                        text: rawText.substring(0, 1500)
+                    });
                 });
-
-                // Strategy 2: if no links found, extract text items from the #positions section
-                if (jobs.length === 0) {
-                    const posSection = document.getElementById("positions") || document.querySelector("[id*='position'], [id*='job'], [id*='opening']");
-                    if (posSection) {
-                        const items = posSection.querySelectorAll("li, div[role='listitem'], article");
-                        items.forEach(item => {
-                            const title = item.innerText.trim().split("\\n")[0];
-                            const url = window.location.href + "#" + (item.id || title.replace(/\\s+/g, "-").toLowerCase());
-                            if (title && !seen.has(url)) {
-                                seen.add(url);
-                                jobs.push({ title, location: "India", url, text: item.innerText.replace(/\\s+/g, " ").trim() });
-                            }
-                        });
-                    }
-                }
 
                 return jobs;
             }'''
@@ -674,6 +679,10 @@ async def scrape_sarvam_jobs():
 
             all_jobs.extend(unique)
             print(f"  Found {len(sarvam_jobs)} cards, {len(unique)} unique jobs")
+
+            # Log titles for verification
+            for j in unique:
+                print(f"    → {j['title']} | {j['location']}")
 
         except Exception as e:
             print(f"  Sarvam AI scraping failed: {e}")
