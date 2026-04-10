@@ -612,32 +612,79 @@ RELEVANT_TITLE_KEYWORDS = [
     "payments", "platform", "consumer", "experience", "data", "ai", "intelligence",
 ]
 
-def prefilter_jobs(jobs_data):
-    """Drop roles that are clearly outside Jay's profile before sending to Claude."""
-    skip_keywords = [
-        # Pure engineering
-        "software engineer", "sre ", "site reliability", "network engineer",
-        "hardware engineer", "test engineer", "security engineer",
-        "infrastructure engineer", "embedded", "firmware", "kernel", "devops",
-        # Student / entry-level
-        "intern", "phd intern", "apprentice",
-        # Offline BD / traditional partnerships (not digital product)
-        "strategic partner development", "partner development manager",
-        "partner sales", "field sales", "account executive",
-        "strategic partner manager",  # music/media BD roles, not product
+def calculate_title_score(title):
+    """Predicts a relevance score (0-100) based ONLY on the title.
+    Used for 'Fast Triage' to avoid wasting tokens on non-relevant roles.
+    """
+    title = title.lower()
+    score = 45  # Baseline score
+
+    # Jay's Super-High-Signal Keywords (+25 each)
+    super_signals = ["strategy", "product", "growth", "gtm", "go-to-market", "ai product", "india"]
+    for word in super_signals:
+        if word in title: score += 25
+
+    # General High-Signal Keywords (+15 each)
+    high_signals = ["manager", "lead", "director", "partnerships", "operations", "monetization", "commerce"]
+    for word in high_signals:
+        if word in title: score += 15
+
+    # Negative/Discard Signals (-60)
+    # These roles are highly unlikely to be the digital product/strategy roles Jay wants
+    negative_signals = [
+        "account manager", "account executive", "field sales", "sales manager",
+        "music licensing", "content partnerships", "offline", "facilities",
+        "customer success", "recruiter", "hr", "payroll", "legal", "counsel",
+        "intern", "phd", "associate" # Associate often means junior at Google
     ]
+    for word in negative_signals:
+        if word in title: score -= 60
+        
+    return max(0, min(100, score))
+
+def prefilter_jobs(jobs_data):
+    """Stage 1: Bulk Keyword Filtering. 
+    Stage 2: Title-Based Triage (Jay's 'Fast Triage' request).
+    """
+    skip_keywords = [
+        "software engineer", "sre", "site reliability", "network engineer",
+        "hardware engineer", "test engineer", "security engineer",
+        "infrastructure engineer", "embedded", "firmware", "kernel", "devops"
+    ]
+    
     filtered = []
+    skipped_count = 0
+    triage_count = 0
+    
     for job in jobs_data:
-        title_lower = job.get("title", "").lower()
+        title = job.get("title", "")
+        title_lower = title.lower()
+        
+        # 1. Hard Engineer Skip
         if any(kw in title_lower for kw in skip_keywords):
+            skipped_count += 1
             continue
+            
+        # 2. Fast Triage (Jay's Prediction Request)
+        # Discard anything with a Title Score < 40 before Claude evaluation
+        title_score = calculate_title_score(title)
+        if title_score < 40:
+            triage_count += 1
+            continue
+            
         filtered.append(job)
-    print(f"  Pre-filter: {len(jobs_data)} → {len(filtered)} jobs (dropped eng/intern/BD roles)")
+        
+    print(f"  [Triage] {len(jobs_data)} starting roles:")
+    print(f"    - Dropped {skipped_count} engineering roles")
+    print(f"    - Discarded {triage_count} low-probability titles (Fast Triage)")
+    print(f"    → {len(filtered)} roles sent to Claude Opus for full analysis.")
     return filtered
 
 def evaluate_jobs(jobs_data, context_text):
-    jobs_data = prefilter_jobs(jobs_data)
-    print(f"Evaluating {len(jobs_data)} jobs via Claude API...")
+    """Deep analysis via Claude Opus. 
+    NOTE: In the persistence-aware architecture, jobs_data here is already pre-filtered to contain ONLY UNKNOWN ROLES.
+    """
+    print(f"Evaluating {len(jobs_data)} roles via Claude Opus 4.6 (Intelligence Phase)...")
     if not jobs_data:
         return []
 
@@ -728,8 +775,8 @@ Each object must follow this exact schema:
     try:
         client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
         message = client.messages.create(
-            model="claude-3-5-sonnet-latest",
-            max_tokens=8192,
+            model="claude-opus-4-6",
+            max_tokens=16000,
             temperature=0.2,
             messages=[{"role": "user", "content": prompt}]
         )
@@ -754,31 +801,71 @@ Each object must follow this exact schema:
 async def main():
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 
+    # 1. Load Persistence Layer (Previous Brain Memory)
+    existing_brain = {}
+    if os.path.exists(OUTPUT_FILE):
+        try:
+            with open(OUTPUT_FILE, "r") as f:
+                data = json.load(f)
+                # Map URL -> Full Evaluated Job Object
+                roles_list = data.get("roles", []) if isinstance(data, dict) else data
+                existing_brain = {j["url"]: j for j in roles_list if "url" in j}
+            print(f"Loaded {len(existing_brain)} previously analyzed roles from memory.")
+        except Exception as e:
+            print(f"Warning: Could not load persistence layer: {e}")
+
+    # 2. Discovery Phase
     jobs_data = []
     try:
         jobs_data = await scrape_jobs()
     except Exception as e:
         print(f"Scraping failed: {e}")
 
-    final_list = []
+    final_results = []
     if jobs_data:
-        results = evaluate_jobs(jobs_data, PROFESSIONAL_CONTEXT)
-        print(f"Kept {len(results)} jobs after filtering.")
-        # Each run is a fresh snapshot — no merging with old data to avoid stale results
-        final_list = results
+        # Step A: Pre-filter out junk (Eng roles/Fast Triage)
+        candidates = prefilter_jobs(jobs_data)
+        
+        # Step B: Persistence Check - Sepereate New vs Known
+        to_analyze = []
+        already_known = []
+        
+        for job in candidates:
+            if job["url"] in existing_brain:
+                already_known.append(existing_brain[job["url"]])
+            else:
+                to_analyze.append(job)
+        
+        print(f"  [Memory Check] {len(candidates)} candidates:")
+        print(f"    - {len(already_known)} roles already analyzed (cached)")
+        print(f"    - {len(to_analyze)} new roles found")
+
+        # Step C: Selective Evaluation via Claude Opus
+        new_evaluations = []
+        if to_analyze:
+            new_evaluations = evaluate_jobs(to_analyze, PROFESSIONAL_CONTEXT)
+            print(f"    → Claude analyzed {len(to_analyze)} new roles. Kept {len(new_evaluations)}.")
+        else:
+            print("    → No new roles to analyze. Skipping Claude Opus call entirely (Tokens saved: 100%)")
+
+        # Step D: Smart Merge
+        # We only keep results for jobs that were ACTUALLY FOUND in the current scrape
+        # This prevents ghost roles from staying on the dashboard after they are removed from Google.
+        final_results = new_evaluations + already_known
     else:
-        print("Scraping returned nothing — keeping last saved results.")
-        if os.path.exists(OUTPUT_FILE):
-            try:
-                with open(OUTPUT_FILE, "r") as f:
-                    final_list = [j for j in json.load(f) if "role_summary" in j]
-            except:
-                pass
+        print("Scraping returned nothing — keeping last saved results to avoid empty dashboard.")
+        final_results = list(existing_brain.values())
+
+    # 3. Save & Synchronize
+    output_data = {
+        "last_synced": datetime.utcnow().isoformat() + "Z",
+        "roles": final_results
+    }
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(final_list, f, indent=2)
+        json.dump(output_data, f, indent=2)
         
-    print(f"Successfully saved {len(final_list)} jobs to {OUTPUT_FILE}")
+    print(f"Successfully saved {len(final_results)} jobs (Brain updated).")
     upload_to_github(OUTPUT_FILE)
 
 def upload_to_github(filepath):

@@ -183,9 +183,20 @@
             flex-shrink: 0;
         }
 
-        .score-high { border-color: var(--accent); color: var(--accent); }
-        .score-med  { border-color: var(--gold);   color: var(--gold);   }
         .score-low  { border-color: #ef4444;        color: #ef4444;       }
+
+        .priority-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #000;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 1px 6px;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-right: 4px;
+            margin-top: -3px;
+        }
 
         /* ─── ROLE SUMMARY (always visible) ─── */
         .role-summary {
@@ -366,7 +377,8 @@
 
     <div class="controls">
         <div class="status-badge">
-            <span class="pulse"></span> Latest sync loaded
+            <span class="pulse"></span> 
+            <span id="syncTime">Syncing...</span>
         </div>
         <div style="display: flex; gap: 1rem;">
             <select id="companyFilter" onchange="currentPage=1; renderJobs()">
@@ -377,8 +389,7 @@
                 <option value="P0">P0 Only</option>
                 <option value="P0-P1">P0+P1</option>
             </select>
-            <select id="sortSelect" onchange="currentPage=1; renderJobs()">
-                <option value="score_recency">Sort: Score (recency tiebreak)</option>
+            <select id="sortSelect" onchange="currentPage=1; renderJobs()" style="display:none">
                 <option value="score">Sort: Highest Score</option>
             </select>
         </div>
@@ -398,7 +409,10 @@
             try {
                 const res = await fetch(`${DATA_URL}?t=${Date.now()}`);
                 if (!res.ok) throw new Error();
-                allJobs = await res.json();
+                const data = await res.json();
+                allJobs = data.roles || [];
+                const syncTime = data.last_synced ? new Date(data.last_synced).toLocaleString() : 'Recent';
+                document.getElementById('syncTime').textContent = `Last Synced: ${syncTime}`;
                 populateCompanyFilter();
                 renderJobs();
             } catch {
@@ -456,20 +470,10 @@
                 if (priorityFilter === 'P0' && job.priority !== 'P0') return false;
                 if (priorityFilter === 'P0-P1' && !['P0', 'P1'].includes(job.priority)) return false;
                 return true;
-            });
+            // Sort strictly by relevance_score
+            filtered.sort((a,b) => (b.relevance_score || 0) - (a.relevance_score || 0));
+            const sorted = filtered;
 
-            const sortBy = document.getElementById('sortSelect').value;
-            let sorted = [...filtered];
-            // Primary: score descending. Secondary: if date is known, newer ranks higher within same score band.
-            sorted.sort((a, b) => {
-                const scoreDiff = (b.relevance_score || 0) - (a.relevance_score || 0);
-                if (scoreDiff !== 0) return scoreDiff;
-                // Tiebreak: prefer roles with a known date, and prefer more recent
-                const da = daysAgo(a.date_published), db = daysAgo(b.date_published);
-                if (da === 999 && db !== 999) return 1;   // b has date, rank it higher
-                if (db === 999 && da !== 999) return -1;  // a has date, rank it higher
-                return da - db; // both have dates: fewer days ago = higher
-            });
 
             const totalPages = Math.ceil(sorted.length / ROLES_PER_PAGE);
             if (currentPage > totalPages) currentPage = totalPages;
@@ -496,7 +500,10 @@
                     <div class="card-header">
                         <span class="card-number">#${globalRank}</span>
                         <div class="card-header-left">
-                            <div class="job-title">${job.title || 'Unknown Role'}</div>
+                            <div class="job-title">
+                                ${job.priority === 'P0' ? '<span class="priority-badge">P0</span> ' : ''}
+                                ${job.title || 'Unknown Role'}
+                            </div>
                             <div class="meta-tags">
                                 <span class="tag">🏢 ${job.company || 'Google'}</span>
                                 <span class="tag">📍 ${job.location || 'India'}</span>
