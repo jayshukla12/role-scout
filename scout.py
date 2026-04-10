@@ -399,9 +399,9 @@ def prefilter_jobs(jobs_data):
             continue
             
         # 2. Fast Triage (Jay's Prediction Request)
-        # Discard anything with a Title Score < 40 before Claude evaluation
+        # Ruthless Filter: Discard anything with a Title Score < 50 before Claude evaluation
         title_score = calculate_title_score(title)
-        if title_score < 40:
+        if title_score < 50:
             triage_count += 1
             continue
             
@@ -434,13 +434,14 @@ Jay's context is provided below. Score roles 0-100 and assign priority (P0-P2).
 </hard_discard_rules>
 
 <scoring_guide>
-- HIGH (70-95): Consumer PM, India growth/localmarket, Creator economy, SMB growth, AI Product (GTM/UX), Vernacular users.
-- MEDIUM (50-69): B2B/Enterprise PM with India component, Strategy with market mandates, high-affinity roles with 8-9yr requirement.
-- DISCARD (<45): Pure process ops, relationship management, account management.
+- HIGH (75-95): Consumer PM, India growth/localmarket, Creator economy, SMB growth, AI Product (GTM/UX), Vernacular users.
+- MEDIUM (55-74): B2B/Enterprise PM with India component, Strategy with market mandates, high-affinity roles with 8-9yr requirement.
+- DISCARD (<55): Anything else.
 </scoring_guide>
 
 <output_requirements>
 - Return ONLY a valid JSON array.
+- RUTHLESS FILTER: Do NOT include any roles in the output that score below 55.
 - Field Schema: {{"id", "title", "company", "location", "url", "relevance_score", "priority", "role_summary", "why_good_fit", "how_to_win", "job_description", "date_published", "scraped_at"}}
 - Cite the candidate's specific measurable impact from the context provided (revenue uplift, user scaling, product launches).
 - **DATA PRIVACY RULE**: Return high-level "Why this is a good fit" summaries. DO NOT repeat specific confidential revenue numbers, non-public internal tool names, or PII in the JSON response. Keep the 'why_good_fit' and 'how_to_win' sections professional and suitable for a public-facing dashboard.
