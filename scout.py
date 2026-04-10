@@ -29,7 +29,7 @@ SSL_CTX = ssl.create_default_context(cafile=certifi.where())
 
 BASE_URL = "https://www.google.com/about/careers/applications/jobs/results"
 OPENAI_BASE_URL = "https://openai.com/careers/search"
-OPENAI_LOCATION_FILTER = "l=2ef3d3b7-e015-45f9-90ff-b530f7dad8af%2Cd2b1576e-0e1e-4611-b587-6f65f326be14%2C28e2c82d-aa3c-4f77-8084-ebf8888b22cf"
+OPENAI_LOCATION_FILTER = "l=d2b1576e-0e1e-4611-b587-6f65f326be14%2C28e2c82d-aa3c-4f77-8084-ebf8888b22cf"
 OUTPUT_FILE = "data/scouted_roles.json"
 REJECTED_FILE = "data/rejected_roles.json"
 
@@ -515,44 +515,54 @@ async def scrape_openai_jobs():
             url = f"{OPENAI_BASE_URL}?{OPENAI_LOCATION_FILTER}"
             await page.goto(url, wait_until="domcontentloaded", timeout=60000)
 
-            # Wait for job cards to load — OpenAI uses job-related class names
+            # Wait for job cards to load — OpenAI uses links with /careers/ paths
             # Attempt to wait for common job card selectors
             try:
-                await page.wait_for_selector("a[href*='/careers'], div[role='listitem'], li[role='listitem']", timeout=12000)
+                await page.wait_for_selector("a[href*='/careers/']", timeout=12000)
             except:
                 pass  # If no cards found, may still have content
 
-            await page.wait_for_timeout(1500)
+            await page.wait_for_timeout(3000)
 
-            # Extract OpenAI job cards — using a more flexible selector
+            # Extract OpenAI job cards — find all career links and extract from their context
             openai_extract_js = '''() => {
                 const jobs = [];
-                // Try multiple selectors for OpenAI's job cards
-                let cards = document.querySelectorAll("[role='listitem']");
-                if (cards.length === 0) cards = document.querySelectorAll("li");
-                if (cards.length === 0) cards = document.querySelectorAll("div.job-card, div[data-job], a[href*='/careers/']");
+                const seen = new Set();
 
-                cards.forEach(card => {
-                    const titleEl = card.querySelector("h2, h3, [class*='title'], [class*='job-title']");
-                    const locEl = card.querySelector("[class*='location'], span[class*='location']");
-                    const linkEl = card.querySelector("a[href]");
+                // Find all career job links (not the search page itself)
+                const links = document.querySelectorAll("a[href*='/careers/']");
 
-                    if (!titleEl || !linkEl) return;
+                links.forEach(link => {
+                    const href = link.href;
+                    // Exclude navigation links — job links are /careers/<slug>/ pattern
+                    if (!href || href.includes('/careers/search') || href.endsWith('/careers/') || seen.has(href)) return;
 
-                    const title = titleEl.innerText.trim();
+                    seen.add(href);
+
+                    // Find the parent card element (could be li, article, or div)
+                    const card = link.closest("li, article, [role='listitem'], div") || link;
+
+                    // Extract title (try h2, h3, h4 first, fallback to link text)
+                    const titleEl = card.querySelector("h2, h3, h4");
+                    const title = (titleEl || link).innerText.trim();
+
+                    // Extract location from various possible selectors
+                    const locEl = card.querySelector("[class*='location'], [class*='department'], [class*='region']");
                     const location = locEl ? locEl.innerText.trim() : "Not listed";
-                    const url = linkEl.href;
+
+                    // Get card text for job description
                     const text = card.innerText.replace(/\\s+/g, " ").trim().substring(0, 1500);
 
-                    if (title && url) {
+                    if (title && href) {
                         jobs.push({
                             title: title,
                             location: location,
-                            url: url,
+                            url: href,
                             text: text
                         });
                     }
                 });
+
                 return jobs;
             }'''
 
@@ -697,7 +707,7 @@ Read his full professional context below before scoring anything.
 1. Pure engineering / SWE / SRE / infra / hardware / firmware roles
 2. Intern, PhD intern, or associate/entry-level roles
 3. Traditional offline BD roles: "Strategic Partner Development Manager", "Partner Development Manager", "Field Sales", "Account Executive", "Partner Sales" — these are relationship/sales roles, NOT digital product roles
-4. Roles requiring 8+ years of product management experience — Jay has 7 years total
+4. Roles requiring 10+ years of product management experience — Jay has 7 years total
 5. Roles with no digital product, growth, strategy, or market component
 
 ## SCORE HIGH (70–95) — Jay is a strong fit when:
@@ -714,6 +724,7 @@ Read his full professional context below before scoring anything.
 - Strategy roles with strong analytical and market intelligence component
 - Growth/marketing roles with a product lens
 - Roles requiring 6–7 years experience where Jay's seniority is appropriate
+- Roles requiring 8–9 years PM experience WHERE thematic alignment is very high (India market growth, consumer product growth, AI product, creator economy) — score 55–70, note the experience gap in why_good_fit, tag as P1. Do NOT discard these.
 
 ## SCORE LOW / DISCARD (<45):
 - Pure offline BD/partnerships: signing deals, managing C-suite relationships, music licensing, content deals
@@ -723,8 +734,9 @@ Read his full professional context below before scoring anything.
 
 ## JAY'S EXPERIENCE CALIBRATION:
 - Total product experience: ~7 years (ByteDance + Meta)
-- Appropriate for: Senior IC, Group PM, Lead PM, Strategy Lead — NOT "Senior/Staff PM requiring 8+ years"
-- If a role says "8 years minimum PM experience", score it below 45 and exclude
+- Appropriate for: Senior IC, Group PM, Lead PM, Strategy Lead, and high-affinity roles with 8–9 year requirements
+- 1–2 year experience gaps are NOT automatic rejections if thematic fit is exceptional (India growth, consumer product, AI product)
+- Roles requiring 10+ years should be excluded per HARD DISCARD rule
 
 ## JAY'S BACKGROUND (cite these specifically in why_good_fit):
 - Meta: 2.3% India revenue uplift from SMB enforcement fix — single largest revenue feature in Meta India history
