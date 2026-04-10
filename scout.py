@@ -545,7 +545,9 @@ async def main():
 
         for job in candidates:
             if job["url"] in existing_brain:
-                already_known.append(existing_brain[job["url"]])
+                known_job = existing_brain[job["url"]]
+                known_job["analysis_source"] = "cache"
+                already_known.append(known_job)
             elif job["url"] in rejected_urls:
                 already_rejected.append(job)
             else:
@@ -561,6 +563,9 @@ async def main():
         newly_rejected_urls = []
         if to_analyze:
             new_evaluations = evaluate_jobs(to_analyze, PROFESSIONAL_CONTEXT)
+            for j in new_evaluations:
+                j["analysis_source"] = "deep_brain"
+            
             # Track URLs that were evaluated but rejected (not returned by Claude)
             analyzed_urls = {job["url"] for job in new_evaluations}
             newly_rejected_urls = [job["url"] for job in to_analyze if job["url"] not in analyzed_urls]

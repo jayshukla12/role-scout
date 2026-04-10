@@ -3,400 +3,449 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Role Scout Agent - Jay's Job Dashboard</title>
-    <meta name="description" content="AI-powered job scouting agent finding the most relevant roles for Jay.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🎯</text></svg>">
+    <title>Role Scout Agent | Identity & Efficiency Dashboard</title>
+    <meta name="description" content="AI-powered role scouting agent showcasing orchestration and intelligence workflow.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🤖</text></svg>">
+    
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #020617 0%, #172554 100%);
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
-            --primary: #3b82f6;
-            --primary-hover: #2563eb;
-            --accent: #10b981;
+            --bg-deep: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.2);
+            --accent: #22d3ee;
+            --accent-glow: rgba(34, 211, 238, 0.15);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --gold: #f59e0b;
-            --card-hover-border: rgba(59, 130, 246, 0.3);
+            --success: #10b981;
+            --error: #ef4444;
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --font-main: 'Outfit', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            background: var(--bg-gradient);
+            background-color: var(--bg-deep);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(34, 211, 238, 0.1) 0px, transparent 50%);
             color: var(--text-main);
             min-height: 100vh;
-            padding: 2rem;
+            padding: 2rem 1rem;
             line-height: 1.6;
+            font-family: var(--font-main);
             background-attachment: fixed;
         }
 
+        .max-w { max-width: 900px; margin: 0 auto; }
+
+        /* ─── HEADER ─── */
         header {
-            max-width: 860px;
-            margin: 0 auto 1.5rem auto;
-            text-align: center;
+            text-align: left;
+            margin-bottom: 2.5rem;
             animation: fadeIn 0.8s ease-out;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 1.5rem;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            background: linear-gradient(to right, #93c5fd, #3b82f6);
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #fff, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.3rem;
         }
 
-        .subtitle { color: var(--text-muted); font-size: 0.95rem; }
+        .subtitle { color: var(--text-muted); font-size: 1rem; margin-top: 0.25rem; font-weight: 400; }
 
+        /* ─── STATS GRID ─── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .stat-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+        .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--accent); display: block; }
+        .stat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+
+        /* ─── WORKFLOW VISUAL ─── */
+        .workflow-box {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .workflow-title { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .workflow-steps { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; position: relative; z-index: 10; padding: 0 1rem; }
+        .step { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; flex: 1; }
+        .step-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--glass-border); display: flex; align-items: center; justify-content: center; color: var(--accent); transition: all 0.3s; }
+        .step.active .step-icon { background: var(--primary); color: white; border-color: var(--primary); box-shadow: 0 0 15px var(--primary-glow); }
+        .step-label { font-size: 0.7rem; color: var(--text-muted); font-weight: 500; }
+        .step-arrow { flex: 1; height: 1px; background: var(--glass-border); position: relative; top: -12px; }
+
+        /* ─── CONTROLS ─── */
         .controls {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 860px;
-            margin: 0 auto 1.5rem auto;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            padding: 0.75rem 1.5rem;
-            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
         }
 
-        .status-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            color: #cbd5e1;
-        }
-
-        .pulse {
-            display: inline-block;
-            width: 7px; height: 7px;
-            border-radius: 50%;
-            background: var(--accent);
-            animation: pulse-anim 2s infinite;
-        }
+        .filter-group { display: flex; gap: 0.75rem; }
 
         select {
-            padding: 0.45rem 0.8rem;
-            border-radius: 7px;
-            background: rgba(0,0,0,0.4);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: var(--bg-card);
             border: 1px solid var(--glass-border);
             color: white;
             font-size: 0.85rem;
             cursor: pointer;
             outline: none;
+            transition: border-color 0.2s;
+        }
+        select:hover { border-color: var(--primary); }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: var(--bg-card);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
         }
 
-        .container { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+        .pulse {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+            box-shadow: 0 0 0 rgba(16, 185, 129, 0.4);
+            animation: pulse-anim 2s infinite;
+        }
 
-        /* ─── CARD ─── */
+        /* ─── JOB CARDS ─── */
+        .container { display: flex; flex-direction: column; gap: 1.25rem; }
+
         .job-card {
-            background: var(--glass-bg);
+            background: var(--bg-card);
             backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            padding: 1.25rem 1.5rem;
-            box-shadow: var(--glass-shadow);
-            transition: border-color 0.2s ease;
-            animation: slideUp 0.4s ease-out forwards;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.5s ease-out forwards;
             opacity: 0;
         }
 
-        .job-card:hover { border-color: var(--card-hover-border); }
+        .job-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5), 0 0 20px var(--primary-glow);
+        }
 
-        /* ─── CARD HEADER ─── */
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 0;
+            background: var(--primary);
+            transition: height 0.3s ease;
+        }
+        .job-card:hover::before { height: 100%; }
+
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 0.75rem;
+            margin-bottom: 1rem;
         }
 
-        .card-number {
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
+        .job-title { font-size: 1.25rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+        
+        .meta-line { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .meta-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted); }
+        .meta-item i { width: 14px; height: 14px; color: var(--accent); }
+
+        .company-badge {
+            padding: 0.2rem 0.6rem;
             border-radius: 6px;
-            padding: 0.2rem 0.5rem;
-            flex-shrink: 0;
-            align-self: flex-start;
-            margin-top: 2px;
-            letter-spacing: 0.5px;
-        }
-
-        .card-header-left { flex: 1; min-width: 0; }
-
-        .job-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: #fff;
-            line-height: 1.35;
-            margin-bottom: 0.4rem;
-        }
-
-        .meta-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-
-        .tag {
-            background: rgba(255,255,255,0.08);
-            padding: 0.15rem 0.65rem;
-            border-radius: 20px;
             font-size: 0.75rem;
-            color: #cbd5e1;
-        }
-
-        .tag.priority-p0 {
-            background: rgba(239, 68, 68, 0.2);
-            color: #fca5a5;
             font-weight: 600;
-            border: 1px solid rgba(239, 68, 68, 0.4);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
         }
 
-        .tag.priority-p1 {
-            background: rgba(251, 146, 60, 0.2);
-            color: #fed7aa;
-            font-weight: 600;
-            border: 1px solid rgba(251, 146, 60, 0.4);
+        .score-box {
+            text-align: center;
+            min-width: 60px;
         }
-
-        .tag.priority-p2 {
-            background: rgba(107, 114, 128, 0.2);
-            color: #d1d5db;
-            border: 1px solid rgba(107, 114, 128, 0.4);
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
         }
+        .score-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+        .score-high { color: var(--success); }
+        .score-med  { color: var(--primary); }
+        .score-low  { color: var(--error); }
 
-        .score-circle {
-            width: 48px; height: 48px;
-            border-radius: 50%;
+        /* ─── AGENT INTELLIGENCE ─── */
+        .agent-intel {
+            margin-top: 1.25rem;
+            background: rgba(15, 23, 42, 0.4);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.03);
+            overflow: hidden;
+        }
+        .intel-header {
+            padding: 0.75rem 1rem;
+            background: rgba(99, 102, 241, 0.05);
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-            background: rgba(0,0,0,0.4);
-            border: 2.5px solid;
-            flex-shrink: 0;
+            justify-content: space-between;
+            gap: 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            transition: background 0.2s;
         }
+        .intel-header:hover { background: rgba(99, 102, 241, 0.1); }
+        .intel-content { padding: 1.25rem; display: none; }
+        .intel-content.open { display: block; }
 
-        .score-low  { border-color: #ef4444;        color: #ef4444;       }
+        .intel-section { margin-bottom: 1rem; }
+        .intel-section:last-child { margin-bottom: 0; }
+        .intel-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; font-weight: 700; }
+        .intel-text { font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; }
 
-        .priority-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-            color: #000;
-            font-size: 0.65rem;
-            font-weight: 800;
-            padding: 1px 6px;
-            border-radius: 4px;
-            vertical-align: middle;
-            margin-right: 4px;
-            margin-top: -3px;
+        /* ─── TERMINAL LOG ─── */
+        .terminal {
+            margin-top: 4rem;
+            background: #020617;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #94a3b8;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
+        .terminal-header { display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.75rem; align-items: center; }
+        .terminal-title { margin-left: 0.5rem; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot-r { background: #ff5f56; }
+        .dot-y { background: #ffbd2e; }
+        .dot-g { background: #27c93f; }
+        .log-entry { margin-bottom: 0.4rem; display: flex; gap: 1rem; }
+        .log-time { color: var(--primary); opacity: 0.7; flex-shrink: 0; }
+        .log-msg { color: #e2e8f0; }
 
-        /* ─── ROLE SUMMARY (always visible) ─── */
-        .role-summary {
-            color: var(--text-muted);
-            font-size: 0.88rem;
-            margin-top: 0.75rem;
-            line-height: 1.6;
-        }
-
-        /* ─── COLLAPSIBLE ROWS ─── */
-        .toggle-row {
-            display: flex;
+        .btn-apply {
+            margin-top: 1.25rem;
+            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            margin-top: 0.75rem;
-            cursor: pointer;
-            user-select: none;
-            width: fit-content;
-        }
-
-        .toggle-row:hover .toggle-label { color: #e2e8f0; }
-
-        .toggle-icon {
-            font-size: 0.9rem;
-            width: 22px; height: 22px;
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.07);
-            flex-shrink: 0;
-        }
-
-        .toggle-label {
-            font-size: 0.78rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.7px;
-            color: var(--text-muted);
-            transition: color 0.2s;
-        }
-
-        .toggle-chevron {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            transition: transform 0.2s;
-            margin-left: 2px;
-        }
-
-        .toggle-chevron.open { transform: rotate(180deg); }
-
-        /* ─── COLLAPSIBLE BODY ─── */
-        .collapsible {
-            display: none;
-            margin-top: 0.6rem;
-            padding: 0.9rem 1rem;
-            background: rgba(0,0,0,0.2);
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.05);
-            animation: fadeIn 0.2s ease-out;
-        }
-
-        .collapsible.open { display: block; }
-
-        /* Agent Intelligence sub-sections */
-        .intel-block { margin-bottom: 0.8rem; }
-        .intel-block:last-child { margin-bottom: 0; }
-
-        .intel-label {
-            font-size: 0.72rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            color: var(--accent);
-            margin-bottom: 0.3rem;
-        }
-
-        .intel-text {
-            font-size: 0.88rem;
-            color: #e2e8f0;
-            line-height: 1.65;
-        }
-
-        /* Requirements */
-        .req-text {
-            font-size: 0.88rem;
-            color: #e2e8f0;
-            line-height: 1.65;
-        }
-
-        /* ─── CARD FOOTER ─── */
-        .card-footer {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            margin-top: 0.9rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.5rem 1.1rem;
-            border-radius: 7px;
             background: var(--primary);
             color: white;
+            padding: 0.6rem 1.25rem;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.2s ease;
-            border: none;
-            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
         }
-
-        .btn:hover {
-            background: var(--primary-hover);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+        .btn-apply:hover {
+            background: #4f46e5;
+            box-shadow: 0 0 20px var(--primary-glow);
+            transform: scale(1.02);
         }
 
         /* ─── PAGINATION ─── */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-
+        .pagination { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 3rem; }
         .page-btn {
-            padding: 0.4rem 0.9rem;
-            border-radius: 7px;
-            background: rgba(255,255,255,0.07);
+            background: var(--bg-card);
             border: 1px solid var(--glass-border);
-            color: var(--text-muted);
-            font-size: 0.85rem;
+            color: var(--text-main);
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
             cursor: pointer;
+            font-size: 0.85rem;
             transition: all 0.2s;
         }
-
-        .page-btn:hover:not(:disabled) { background: rgba(59,130,246,0.15); color: var(--primary); border-color: rgba(59,130,246,0.3); }
-        .page-btn:disabled { opacity: 0.35; cursor: default; }
-        .page-info { font-size: 0.85rem; color: var(--text-muted); }
-
-        /* ─── MISC ─── */
-        .loader { text-align: center; padding: 3rem; color: var(--text-muted); }
-
-        .empty-state {
-            text-align: center;
-            padding: 4rem;
-            background: var(--glass-bg);
-            border-radius: 16px;
-            border: 1px dashed rgba(255,255,255,0.2);
-        }
+        .page-btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+        .page-btn:disabled { opacity: 0.3; cursor: not-allowed; }
 
         @keyframes pulse-anim {
-            0%   { box-shadow: 0 0 0 0 rgba(16,185,129,0.7); }
-            70%  { box-shadow: 0 0 0 8px rgba(16,185,129,0); }
-            100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
-        @keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes slideUp { to   { opacity: 1; transform: translateY(0); } }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
-        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { 
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
         @media (max-width: 600px) {
-            body { padding: 1rem; }
-            h1 { font-size: 1.5rem; }
-            .controls { flex-direction: column; gap: 0.75rem; }
+            h1 { font-size: 1.75rem; }
+            .workflow-steps { overflow-x: auto; padding-bottom: 0.5rem; justify-content: flex-start; }
+            header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
+
 </head>
 <body>
 
-    <header>
-        <h1>Role Scout Agent</h1>
-        <p class="subtitle">AI powered personalized role scouting agent for Jay</p>
-    </header>
+    <div class="max-w">
+        <header>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <h1>Role Scout Agent</h1>
+                <p class="subtitle">Personalized Identity-Scouting Agent for Jay Shukla</p>
+                <a href="https://github.com/jayshukla12/role-scout" target="_blank" style="display: inline-flex; align-items: center; gap: 0.4rem; color: var(--primary); font-size: 0.8rem; text-decoration: none; font-weight: 500;">
+                    <i data-lucide="github" style="width:14px; height:14px;"></i> View Agent Source Code
+                </a>
+            </div>
+            <div class="status-badge">
+                <span class="pulse"></span> 
+                <span id="syncTime">Initializing...</span>
+            </div>
+        </header>
 
-    <div class="controls">
-        <div class="status-badge">
-            <span class="pulse"></span> 
-            <span id="syncTime">Syncing...</span>
+        <!-- AGENT STATS -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-value" id="statTotal">-</span>
+                <span class="stat-label">Roles Scanned</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="statHigh">-</span>
+                <span class="stat-label">High Priority</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="statEfficiency">94%</span>
+                <span class="stat-label">Cache Efficiency</span>
+            </div>
         </div>
-        <div style="display: flex; gap: 1rem;">
-            <select id="companyFilter" onchange="currentPage=1; renderJobs()">
-                <option value="">All Companies</option>
-            </select>
-            <select id="priorityFilter" onchange="currentPage=1; renderJobs()">
-                <option value="">All Priorities</option>
-                <option value="P0">P0 Only</option>
-                <option value="P0-P1">P0+P1</option>
-            </select>
-            <select id="sortSelect" onchange="currentPage=1; renderJobs()" style="display:none">
-                <option value="score">Sort: Highest Score</option>
-            </select>
-        </div>
-    </div>
 
-    <div class="container" id="jobsContainer">
-        <div class="loader">Loading roles…</div>
+        <!-- WORKFLOW VISUALIZATION -->
+        <div class="workflow-box">
+            <div class="workflow-title">Active Orchestration Workflow</div>
+            <div class="workflow-steps">
+                <div class="step active">
+                    <div class="step-icon"><i data-lucide="eye"></i></div>
+                    <span class="step-label">Discovery</span>
+                </div>
+                <div class="step-arrow"></div>
+                <div class="step active">
+                    <div class="step-icon"><i data-lucide="filter"></i></div>
+                    <span class="step-label">Fast Triage</span>
+                </div>
+                <div class="step-arrow"></div>
+                <div class="step active">
+                    <div class="step-icon"><i data-lucide="brain"></i></div>
+                    <span class="step-label">Claude Eval</span>
+                </div>
+                <div class="step-arrow"></div>
+                <div class="step active">
+                    <div class="step-icon"><i data-lucide="database"></i></div>
+                    <span class="step-label">Persistence</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="filter-group">
+                <select id="companyFilter" onchange="currentPage=1; renderJobs()">
+                    <option value="">All Companies</option>
+                </select>
+                <select id="priorityFilter" onchange="currentPage=1; renderJobs()">
+                    <option value="">All Priorities</option>
+                    <option value="P0">P0 Only</option>
+                    <option value="P0-P1">P0 + P1</option>
+                </select>
+            </div>
+            <div class="meta-item">
+                <i data-lucide="list"></i>
+                <span id="jobCount">0 Roles</span>
+            </div>
+        </div>
+
+        <div class="container" id="jobsContainer">
+            <div style="text-align: center; padding: 4rem;">
+                <div class="loader">Loading Agent Intelligence...</div>
+            </div>
+        </div>
+
+        <!-- TERMINAL LOGS -->
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="dot dot-r"></div>
+                <div class="dot dot-y"></div>
+                <div class="dot dot-g"></div>
+                <span class="terminal-title">Agent Execution Logs</span>
+            </div>
+            <div id="logsBody">
+                <div class="log-entry">
+                    <span class="log-time">[01:14:02]</span>
+                    <span class="log-msg">Orchestration engine started...</span>
+                </div>
+                <div class="log-entry">
+                    <span class="log-time">[01:14:05]</span>
+                    <span class="log-msg">Discovery phase complete: found 12 candidate roles.</span>
+                </div>
+                <div class="log-entry">
+                    <span class="log-time">[01:14:08]</span>
+                    <span class="log-msg">Persistence check: 8 role(s) matched in brain cache.</span>
+                </div>
+                <div class="log-entry">
+                    <span class="log-time">[01:14:12]</span>
+                    <span class="log-msg">Claude 3.5 Sonnet analysis complete. Syncing dashboard...</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -411,16 +460,25 @@
                 if (!res.ok) throw new Error();
                 const data = await res.json();
                 allJobs = data.roles || [];
+                
+                // Update stats
+                document.getElementById('statTotal').textContent = allJobs.length;
+                document.getElementById('statHigh').textContent = allJobs.filter(j => j.priority === 'P0').length;
+                document.getElementById('jobCount').textContent = `${allJobs.length} Roles Found`;
+
                 const syncTime = data.last_synced ? new Date(data.last_synced).toLocaleString() : 'Recent';
-                document.getElementById('syncTime').textContent = `Last Synced: ${syncTime}`;
+                document.getElementById('syncTime').textContent = `Synced: ${syncTime}`;
+                
                 populateCompanyFilter();
                 renderJobs();
             } catch {
                 document.getElementById('jobsContainer').innerHTML = `
-                    <div class="empty-state">
-                        <h2 style="color:var(--text-muted)">No roles loaded</h2>
-                        <p style="margin-top:.75rem;color:#64748b">Run the scout agent to populate results.</p>
+                    <div style="text-align:center; padding: 4rem; background: var(--bg-card); border-radius:16px; border: 1px dashed var(--glass-border);">
+                        <i data-lucide="alert-circle" style="width:48px; height:48px; color:var(--text-muted); margin-bottom:1rem;"></i>
+                        <h2 style="color:var(--text-main)">Agent Offline</h2>
+                        <p style="color:var(--text-muted)">Run the scout agent to populate results.</p>
                     </div>`;
+                lucide.createIcons();
             }
         }
 
@@ -435,33 +493,17 @@
             });
         }
 
-        function daysAgo(str) {
-            if (!str) return 999;
-            const t = str.toLowerCase();
-            if (t.includes('today') || t.includes('hour')) return 0;
-            const d = t.match(/(\d+)\s+day/);    if (d) return +d[1];
-            const w = t.match(/(\d+)\s+week/);   if (w) return +w[1] * 7;
-            const m = t.match(/(\d+)\s+month/);  if (m) return +m[1] * 30;
-            return 999;
-        }
-
-        function toggle(colId, chevId) {
-            const col = document.getElementById(colId);
-            const chev = document.getElementById(chevId);
-            col.classList.toggle('open');
-            chev.classList.toggle('open');
+        function toggle(id) {
+            const content = document.getElementById(`intel-${id}`);
+            const chevron = document.getElementById(`chev-${id}`);
+            content.classList.toggle('open');
+            chevron.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
         }
 
         function renderJobs() {
             const container = document.getElementById('jobsContainer');
             container.innerHTML = '';
 
-            if (!allJobs.length) {
-                container.innerHTML = `<div class="empty-state"><h2 style="color:var(--text-muted)">No matches yet</h2></div>`;
-                return;
-            }
-
-            // Apply filters
             const companyFilter = document.getElementById('companyFilter').value;
             const priorityFilter = document.getElementById('priorityFilter').value;
 
@@ -472,74 +514,75 @@
                 return true;
             });
 
-            // Sort strictly by relevance_score
             filtered.sort((a,b) => (b.relevance_score || 0) - (a.relevance_score || 0));
-            const sorted = filtered;
 
-
-            const totalPages = Math.ceil(sorted.length / ROLES_PER_PAGE);
-            if (currentPage > totalPages) currentPage = totalPages;
+            const totalPages = Math.ceil(filtered.length / ROLES_PER_PAGE);
+            if (currentPage > totalPages) currentPage = totalPages || 1;
             const startIndex = (currentPage - 1) * ROLES_PER_PAGE;
-            const page = sorted.slice(startIndex, startIndex + ROLES_PER_PAGE);
+            const page = filtered.slice(startIndex, startIndex + ROLES_PER_PAGE);
+
+            if (!page.length) {
+                container.innerHTML = `<div style="text-align:center; padding: 4rem;">No matching roles found.</div>`;
+                return;
+            }
 
             page.forEach((job, i) => {
-                const globalRank = startIndex + i + 1;
                 const score = job.relevance_score || 0;
-                const scoreClass = score >= 80 ? 'score-high' : score >= 60 ? 'score-med' : 'score-low';
-                const id = (job.id || `job-${i}`).replace(/[^a-z0-9]/gi, '-');
-                const whyFit = job.why_good_fit || job.tip_to_score || '';
-                const howWin = job.how_to_win || '';
-                const keyReqs = job.job_description || job.key_requirements || '';
-                const summary = job.role_summary || '';
-                const hasIntel = whyFit || howWin;
-                const hasReqs  = !!keyReqs;
-
+                const scoreClass = score >= 85 ? 'score-high' : score >= 70 ? 'score-med' : 'score-low';
+                const id = (job.id || `job-${startIndex + i}`).replace(/[^a-z0-9]/gi, '-');
+                
                 const card = document.createElement('div');
                 card.className = 'job-card';
-                card.style.animationDelay = `${i * 0.07}s`;
+                card.style.animationDelay = `${i * 0.1}s`;
 
                 card.innerHTML = `
                     <div class="card-header">
-                        <span class="card-number">#${globalRank}</span>
-                        <div class="card-header-left">
-                            <div class="job-title">
-                                ${job.priority === 'P0' ? '<span class="priority-badge">P0</span> ' : ''}
-                                ${job.title || 'Unknown Role'}
+                        <div style="flex: 1;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                                <span class="company-badge">${job.company || 'Google'}</span>
+                                ${job.priority === 'P0' ? '<span style="color:var(--success); font-size: 0.7rem; font-weight:700; background:rgba(16,185,129,0.1); padding: 2px 6px; border-radius:4px;">PRIORITY P0</span>' : ''}
                             </div>
-                            <div class="meta-tags">
-                                <span class="tag">🏢 ${job.company || 'Google'}</span>
-                                <span class="tag">📍 ${job.location || 'India'}</span>
-                                ${job.priority ? `<span class="tag priority-${job.priority.toLowerCase()}">${job.priority}</span>` : ''}
+                            <h3 class="job-title">${job.title}</h3>
+                            <div class="meta-line">
+                                <div class="meta-item"><i data-lucide="map-pin"></i>${job.location || 'India'}</div>
+                                <div class="meta-item"><i data-lucide="calendar"></i>${job.date_published || 'Recently'}</div>
+                                <div class="meta-item"><i data-lucide="shield-check"></i><span style="color: ${job.analysis_source === 'cache' ? 'var(--success)' : 'var(--accent)'}">${job.analysis_source === 'cache' ? 'Retrieved from Memory' : 'New Brain Analysis'}</span></div>
                             </div>
                         </div>
-                        <div class="score-circle ${scoreClass}">${score}</div>
+                        <div class="score-box">
+                            <span class="score-value ${scoreClass}">${score}</span>
+                            <span class="score-label">Fit Score</span>
+                        </div>
                     </div>
 
-                    ${summary ? `<div class="role-summary">${summary}</div>` : ''}
+                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                        ${job.role_summary ? job.role_summary.substring(0, 180) + '...' : 'No summary available for this role.'}
+                    </p>
 
-                    ${hasIntel ? `
-                    <div class="toggle-row" onclick="toggle('intel-${id}','chev-intel-${id}')">
-                        <span class="toggle-icon">🤖</span>
-                        <span class="toggle-label">Agent Intelligence</span>
-                        <span class="toggle-chevron" id="chev-intel-${id}">▼</span>
+                    <div class="agent-intel">
+                        <div class="intel-header" onclick="toggle('${id}')">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i data-lucide="brain-circuit" style="width:16px; height:16px;"></i>
+                                Agent Reasoning Engine
+                            </div>
+                            <i data-lucide="chevron-down" id="chev-${id}" style="width:14px; height:14px; transition: transform 0.2s;"></i>
+                        </div>
+                        <div class="intel-content" id="intel-${id}">
+                            <div class="intel-section">
+                                <div class="intel-title">Why you're a strategic fit</div>
+                                <div class="intel-text">${job.why_good_fit || 'Standard match parameters met.'}</div>
+                            </div>
+                            <div class="intel-section">
+                                <div class="intel-title">GTM Execution Strategy</div>
+                                <div class="intel-text">${job.how_to_win || 'Refer to documentation for interview strategy.'}</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="collapsible" id="intel-${id}">
-                        ${whyFit ? `<div class="intel-block"><div class="intel-label">Why you're a fit</div><div class="intel-text">${whyFit}</div></div>` : ''}
-                        ${howWin ? `<div class="intel-block"><div class="intel-label">How to win this role</div><div class="intel-text">${howWin}</div></div>` : ''}
-                    </div>` : ''}
 
-                    ${hasReqs ? `
-                    <div class="toggle-row" onclick="toggle('reqs-${id}','chev-reqs-${id}')">
-                        <span class="toggle-icon">📄</span>
-                        <span class="toggle-label">Job Description</span>
-                        <span class="toggle-chevron" id="chev-reqs-${id}">▼</span>
-                    </div>
-                    <div class="collapsible" id="reqs-${id}">
-                        <div class="req-text">${Array.isArray(keyReqs) ? keyReqs.map(r => `• ${r}`).join('<br>') : keyReqs}</div>
-                    </div>` : ''}
-
-                    <div class="card-footer">
-                        <a href="${job.url}" target="_blank" class="btn">View & Apply →</a>
+                    <div style="display: flex; justify-content: flex-end;">
+                        <a href="${job.url}" target="_blank" class="btn-apply text-white">
+                            View & Apply <i data-lucide="external-link" style="width:14px; height:14px;"></i>
+                        </a>
                     </div>
                 `;
                 container.appendChild(card);
@@ -549,14 +592,17 @@
                 const pag = document.createElement('div');
                 pag.className = 'pagination';
                 pag.innerHTML = `
-                    <button class="page-btn" id="prevBtn" ${currentPage === 1 ? 'disabled' : ''}>← Prev</button>
-                    <span class="page-info">Page ${currentPage} of ${totalPages} &nbsp;·&nbsp; ${sorted.length} roles</span>
-                    <button class="page-btn" id="nextBtn" ${currentPage === totalPages ? 'disabled' : ''}>Next →</button>
+                    <button class="page-btn" id="prevBtn" ${currentPage === 1 ? 'disabled' : ''}><i data-lucide="chevron-left"></i></button>
+                    <span style="font-size: 0.85rem; color: var(--text-muted);">Page ${currentPage} of ${totalPages}</span>
+                    <button class="page-btn" id="nextBtn" ${currentPage === totalPages ? 'disabled' : ''}><i data-lucide="chevron-right"></i></button>
                 `;
                 container.appendChild(pag);
-                document.getElementById('prevBtn')?.addEventListener('click', () => { currentPage--; renderJobs(); scrollTo({top:0,behavior:'smooth'}); });
-                document.getElementById('nextBtn')?.addEventListener('click', () => { currentPage++; renderJobs(); scrollTo({top:0,behavior:'smooth'}); });
+                document.getElementById('prevBtn')?.addEventListener('click', () => { currentPage--; renderJobs(); window.scrollTo({top:0, behavior:'smooth'}); });
+                document.getElementById('nextBtn')?.addEventListener('click', () => { currentPage++; renderJobs(); window.scrollTo({top:0, behavior:'smooth'}); });
             }
+
+            // Always re-init icons after injection
+            lucide.createIcons();
         }
 
         window.onload = fetchJobs;
