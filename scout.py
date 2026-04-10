@@ -31,6 +31,7 @@ BASE_URL = "https://www.google.com/about/careers/applications/jobs/results"
 OPENAI_BASE_URL = "https://openai.com/careers/search"
 OPENAI_LOCATION_FILTER = "l=2ef3d3b7-e015-45f9-90ff-b530f7dad8af%2Cd2b1576e-0e1e-4611-b587-6f65f326be14%2C28e2c82d-aa3c-4f77-8084-ebf8888b22cf"
 OUTPUT_FILE = "data/scouted_roles.json"
+REJECTED_FILE = "data/rejected_roles.json"
 
 # Professional context embedded directly (replaces jay_professional_context_v1.md)
 PROFESSIONAL_CONTEXT = """# Jay Shukla — Comprehensive Professional Context
@@ -782,6 +783,8 @@ Each object must follow this exact schema:
         )
         raw_response = message.content[0].text.strip()
         print("Claude API response received.")
+        print(f"Response length: {len(raw_response)} characters")
+        print(f"Response preview (first 200 chars): {raw_response[:200]}")
 
         # Strip markdown code fences if present
         raw_response = re.sub(r'^```(?:json)?\s*', '', raw_response)
@@ -789,13 +792,25 @@ Each object must follow this exact schema:
 
         match = re.search(r'\[.*\]', raw_response, re.DOTALL)
         if match:
-            return json.loads(match.group(0))
+            json_str = match.group(0)
+            try:
+                result = json.loads(json_str)
+                print(f"Successfully parsed {len(result)} roles from Claude response.")
+                return result
+            except json.JSONDecodeError as e:
+                print(f"JSON parsing error: {e}")
+                print(f"Captured JSON length: {len(json_str)}")
+                print(f"First 500 chars: {json_str[:500]}")
+                print(f"Last 500 chars: {json_str[-500:]}")
+                return []
         else:
             print("Claude did not return a valid JSON array.")
             print("Response preview:", raw_response[:300])
             return []
     except Exception as e:
         print(f"Claude API call failed: {e}")
+        import traceback
+        traceback.print_exc()
         return []
 
 async def main():
@@ -803,6 +818,9 @@ async def main():
 
     # 1. Load Persistence Layer (Previous Brain Memory)
     existing_brain = {}
+    rejected_urls = set()
+
+    # Load passing roles
     if os.path.exists(OUTPUT_FILE):
         try:
             with open(OUTPUT_FILE, "r") as f:
@@ -810,9 +828,19 @@ async def main():
                 # Map URL -> Full Evaluated Job Object
                 roles_list = data.get("roles", []) if isinstance(data, dict) else data
                 existing_brain = {j["url"]: j for j in roles_list if "url" in j}
-            print(f"Loaded {len(existing_brain)} previously analyzed roles from memory.")
+            print(f"Loaded {len(existing_brain)} previously analyzed (passing) roles from memory.")
         except Exception as e:
             print(f"Warning: Could not load persistence layer: {e}")
+
+    # Load rejected roles (to avoid re-analyzing)
+    if os.path.exists(REJECTED_FILE):
+        try:
+            with open(REJECTED_FILE, "r") as f:
+                rejected_data = json.load(f)
+                rejected_urls = set(rejected_data.get("rejected_urls", []))
+            print(f"Loaded {len(rejected_urls)} previously rejected roles (will skip re-analysis).")
+        except Exception as e:
+            print(f"Warning: Could not load rejected roles: {e}")
 
     # 2. Discovery Phase
     jobs_data = []
@@ -826,25 +854,33 @@ async def main():
         # Step A: Pre-filter out junk (Eng roles/Fast Triage)
         candidates = prefilter_jobs(jobs_data)
         
-        # Step B: Persistence Check - Sepereate New vs Known
+        # Step B: Persistence Check - Separate New vs Known vs Rejected
         to_analyze = []
         already_known = []
-        
+        already_rejected = []
+
         for job in candidates:
             if job["url"] in existing_brain:
                 already_known.append(existing_brain[job["url"]])
+            elif job["url"] in rejected_urls:
+                already_rejected.append(job)
             else:
                 to_analyze.append(job)
-        
+
         print(f"  [Memory Check] {len(candidates)} candidates:")
-        print(f"    - {len(already_known)} roles already analyzed (cached)")
-        print(f"    - {len(to_analyze)} new roles found")
+        print(f"    - {len(already_known)} roles already analyzed (passing, cached)")
+        print(f"    - {len(already_rejected)} roles previously rejected (skipping re-analysis)")
+        print(f"    - {len(to_analyze)} truly new roles found")
 
         # Step C: Selective Evaluation via Claude Opus
         new_evaluations = []
+        newly_rejected_urls = []
         if to_analyze:
             new_evaluations = evaluate_jobs(to_analyze, PROFESSIONAL_CONTEXT)
-            print(f"    → Claude analyzed {len(to_analyze)} new roles. Kept {len(new_evaluations)}.")
+            # Track URLs that were evaluated but rejected (not returned by Claude)
+            analyzed_urls = {job["url"] for job in new_evaluations}
+            newly_rejected_urls = [job["url"] for job in to_analyze if job["url"] not in analyzed_urls]
+            print(f"    → Claude analyzed {len(to_analyze)} new roles. Kept {len(new_evaluations)}, rejected {len(newly_rejected_urls)}.")
         else:
             print("    → No new roles to analyze. Skipping Claude Opus call entirely (Tokens saved: 100%)")
 
@@ -852,6 +888,16 @@ async def main():
         # We only keep results for jobs that were ACTUALLY FOUND in the current scrape
         # This prevents ghost roles from staying on the dashboard after they are removed from Google.
         final_results = new_evaluations + already_known
+
+        # Step E: Update Rejected URLs Cache
+        # Add newly rejected URLs to the cache
+        updated_rejected_urls = rejected_urls | set(newly_rejected_urls)
+        rejected_data = {
+            "last_updated": datetime.utcnow().isoformat() + "Z",
+            "rejected_urls": list(updated_rejected_urls)
+        }
+        with open(REJECTED_FILE, "w") as f:
+            json.dump(rejected_data, f, indent=2)
     else:
         print("Scraping returned nothing — keeping last saved results to avoid empty dashboard.")
         final_results = list(existing_brain.values())
