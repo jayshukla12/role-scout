@@ -30,6 +30,7 @@ SSL_CTX = ssl.create_default_context(cafile=certifi.where())
 BASE_URL = "https://www.google.com/about/careers/applications/jobs/results"
 OPENAI_BASE_URL = "https://openai.com/careers/search"
 OPENAI_LOCATION_FILTER = "l=d2b1576e-0e1e-4611-b587-6f65f326be14%2C28e2c82d-aa3c-4f77-8084-ebf8888b22cf"
+SARVAM_URL = "https://www.sarvam.ai/careers"
 OUTPUT_FILE = "data/scouted_roles.json"
 REJECTED_FILE = "data/rejected_roles.json"
 
@@ -587,10 +588,106 @@ async def scrape_openai_jobs():
     print(f"  OpenAI scraping complete: {len(all_jobs)} unique jobs")
     return all_jobs
 
+async def scrape_sarvam_jobs():
+    """Scrape Sarvam AI Careers for open positions."""
+    print(f"\n[Sarvam AI] Scraping careers page...")
+    all_jobs = []
+
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        ctx = await browser.new_context(
+            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+            viewport={"width": 1280, "height": 900},
+            locale="en-US",
+        )
+        page = await ctx.new_page()
+
+        try:
+            await page.goto(SARVAM_URL, wait_until="domcontentloaded", timeout=60000)
+
+            # Wait for JS-rendered content
+            try:
+                await page.wait_for_selector("#positions, a[href*='/careers/'], a[href*='lever.co'], a[href*='greenhouse.io'], a[href*='ashbyhq.com']", timeout=12000)
+            except:
+                pass
+
+            await page.wait_for_timeout(3000)
+
+            sarvam_extract_js = '''() => {
+                const jobs = [];
+                const seen = new Set();
+
+                // Strategy 1: find job links — Sarvam may use Lever, Greenhouse, or internal paths
+                const jobLinkPatterns = ['/careers/', 'lever.co', 'greenhouse.io', 'ashbyhq.com', 'jobs.'];
+                const allLinks = document.querySelectorAll("a[href]");
+
+                allLinks.forEach(link => {
+                    const href = link.href;
+                    if (!href || seen.has(href)) return;
+
+                    const isJobLink = jobLinkPatterns.some(p => href.includes(p));
+                    // Skip generic page links (e.g. /careers without slug, search pages)
+                    if (!isJobLink) return;
+                    if (href.endsWith('/careers') || href.endsWith('/careers/') || href.includes('/careers#')) return;
+
+                    seen.add(href);
+
+                    const card = link.closest("li, article, [role='listitem'], div") || link;
+                    const titleEl = card.querySelector("h2, h3, h4");
+                    const title = (titleEl || link).innerText.trim();
+                    const locEl = card.querySelector("[class*='location'], [class*='department'], span");
+                    const location = locEl ? locEl.innerText.trim() : "India";
+                    const text = card.innerText.replace(/\\s+/g, " ").trim().substring(0, 1500);
+
+                    if (title && href) {
+                        jobs.push({ title, location, url: href, text });
+                    }
+                });
+
+                // Strategy 2: if no links found, extract text items from the #positions section
+                if (jobs.length === 0) {
+                    const posSection = document.getElementById("positions") || document.querySelector("[id*='position'], [id*='job'], [id*='opening']");
+                    if (posSection) {
+                        const items = posSection.querySelectorAll("li, div[role='listitem'], article");
+                        items.forEach(item => {
+                            const title = item.innerText.trim().split("\\n")[0];
+                            const url = window.location.href + "#" + (item.id || title.replace(/\\s+/g, "-").toLowerCase());
+                            if (title && !seen.has(url)) {
+                                seen.add(url);
+                                jobs.push({ title, location: "India", url, text: item.innerText.replace(/\\s+/g, " ").trim() });
+                            }
+                        });
+                    }
+                }
+
+                return jobs;
+            }'''
+
+            sarvam_jobs = await page.evaluate(sarvam_extract_js)
+
+            seen = set()
+            unique = []
+            for j in sarvam_jobs:
+                if j["url"] not in seen:
+                    seen.add(j["url"])
+                    unique.append(j)
+
+            all_jobs.extend(unique)
+            print(f"  Found {len(sarvam_jobs)} cards, {len(unique)} unique jobs")
+
+        except Exception as e:
+            print(f"  Sarvam AI scraping failed: {e}")
+
+        await browser.close()
+
+    print(f"  Sarvam AI scraping complete: {len(all_jobs)} unique jobs")
+    return all_jobs
+
 async def scrape_jobs():
-    """Main scrape function — combines Google and OpenAI careers."""
+    """Main scrape function — combines Google, OpenAI, and Sarvam AI careers."""
     google_jobs = await scrape_google_jobs()
     openai_jobs = await scrape_openai_jobs()
+    sarvam_jobs = await scrape_sarvam_jobs()
 
     # Merge results with company tagging
     all_jobs = []
@@ -603,6 +700,10 @@ async def scrape_jobs():
         job["company"] = "OpenAI"
         all_jobs.append(job)
 
+    for job in sarvam_jobs:
+        job["company"] = "Sarvam AI"
+        all_jobs.append(job)
+
     # Final dedup by URL
     seen_urls = set()
     final_jobs = []
@@ -611,7 +712,7 @@ async def scrape_jobs():
             seen_urls.add(job["url"])
             final_jobs.append(job)
 
-    print(f"\nTotal scraping complete: {len(final_jobs)} unique jobs (Google: {len(google_jobs)}, OpenAI: {len(openai_jobs)})")
+    print(f"\nTotal scraping complete: {len(final_jobs)} unique jobs (Google: {len(google_jobs)}, OpenAI: {len(openai_jobs)}, Sarvam AI: {len(sarvam_jobs)})")
     return final_jobs
 
 # Title keywords that signal a likely-relevant (non-pure-engineering) role
@@ -700,7 +801,7 @@ def evaluate_jobs(jobs_data, context_text):
         return []
 
     prompt = f"""
-You are a world-class Executive Recruiter and Job Scout evaluating roles from Google, OpenAI, and other leading AI/tech companies for Jay Shukla.
+You are a world-class Executive Recruiter and Job Scout evaluating roles from Google, OpenAI, Sarvam AI, and other leading AI/tech companies for Jay Shukla.
 Read his full professional context below before scoring anything.
 
 ## HARD DISCARD RULES (score 0 and exclude — do not include in output):
