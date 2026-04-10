@@ -35,12 +35,17 @@ OUTPUT_FILE = "data/scouted_roles.json"
 REJECTED_FILE = "data/rejected_roles.json"
 
 def load_identity():
-    """Load Jay's professional context from the data directory."""
+    """Load Jay's professional context from environment or local data directory."""
+    # Check for direct environment variable first (e.g. from GitHub Secrets)
+    env_context = os.environ.get("PROFESSIONAL_CONTEXT")
+    if env_context:
+        return env_context
+
     path = os.path.join(os.path.dirname(__file__), "data", "identity.txt")
     if os.path.exists(path):
         with open(path, "r") as f:
             return f.read()
-    return "No identity context found."
+    return "No identity context found. Please set PROFESSIONAL_CONTEXT."
 
 PROFESSIONAL_CONTEXT = load_identity()
 
@@ -347,8 +352,8 @@ def calculate_title_score(title):
     title = title.lower()
     score = 45  # Baseline score
 
-    # Jay's Super-High-Signal Keywords (+25 each)
-    super_signals = ["strategy", "product", "growth", "gtm", "go-to-market", "ai product", "india"]
+    # High-Signal Keywords (Signals Jay's target role types)
+    super_signals = ["strategy", "product", "growth", "gtm", "go-to-market", "ai"]
     for word in super_signals:
         if word in title: score += 25
 
@@ -437,7 +442,8 @@ Jay's context is provided below. Score roles 0-100 and assign priority (P0-P2).
 <output_requirements>
 - Return ONLY a valid JSON array.
 - Field Schema: {{"id", "title", "company", "location", "url", "relevance_score", "priority", "role_summary", "why_good_fit", "how_to_win", "job_description", "date_published", "scraped_at"}}
-- Cite Jay's specifically: Meta 2.3% revenue uplift, ByteDance Resso scaling, TikTok SMB lead.
+- Cite the candidate's specific measurable impact from the context provided (revenue uplift, user scaling, product launches).
+- **DATA PRIVACY RULE**: Return high-level "Why this is a good fit" summaries. DO NOT repeat specific confidential revenue numbers, non-public internal tool names, or PII in the JSON response. Keep the 'why_good_fit' and 'how_to_win' sections professional and suitable for a public-facing dashboard.
 </output_requirements>
 
 <candidate_context>

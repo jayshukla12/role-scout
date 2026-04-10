@@ -4,3 +4,7 @@ __pycache__/
 *.pyc
 test_*.py
 .claude/
+
+# Data and context protection
+data/*
+!data/scouted_roles.json
