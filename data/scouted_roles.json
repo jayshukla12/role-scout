@@ -1,126 +1,6 @@
 {
-  "last_synced": "2026-04-10T18:08:42.567884Z",
+  "last_synced": "2026-04-10T20:19:04.502136Z",
   "roles": [
-    {
-      "id": "sarvam-ai-gtm-product-vision",
-      "title": "GTM/Product , Vision",
-      "company": "Sarvam AI",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.sarvam.ai/careers/jobs/28772",
-      "relevance_score": 78,
-      "priority": "P0",
-      "role_summary": "A GTM and product role for Sarvam AI's Vision product line, likely involving go-to-market strategy, product positioning, and market adoption for AI vision capabilities in India.",
-      "why_good_fit": "Sarvam AI is India's leading AI-native company building for Indian languages and users \u2014 directly aligned with Jay's superpower of translating Indian user observations into product decisions. His MetaAI India field work (20+ AI user interviews), discovery that language/tone matters more than factual correctness for Indian GenZ, and his GTM instincts from scaling Resso from alpha to India's largest music streaming app make him a strong fit. His experience with AI product adoption (MetaAI India growth) and SMB/consumer segments in India is highly relevant for an AI company expanding its product footprint domestically.",
-      "how_to_win": "Lead with the Sarvam-specific narrative: 'I've spent my career finding the Indian users that global products overlook \u2014 Sarvam is building AI for exactly those users.' Cite the MetaAI field work insight about language as a product growth lever (directly relevant to Sarvam's Indic language focus). Highlight Resso's zero-to-one scaling as proof of GTM execution. Emphasize the personal AI OS built on Metamate as evidence of deep AI product fluency. Address the on-site requirement honestly \u2014 express willingness to relocate or negotiate hybrid given the mission alignment.",
-      "job_description": "This role sits at the intersection of product management and go-to-market for Sarvam AI's Vision product. Day-to-day likely involves defining product positioning, identifying target customer segments, driving adoption strategy, and working closely with ML engineers to translate technical capabilities into market-ready products. Success means driving adoption and revenue for Sarvam's vision AI offerings across Indian enterprise and consumer segments.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T18:07:15.781201Z"
-    },
-    {
-      "id": "sarvam-ai-product-manager-models",
-      "title": "Product Manager (Models)",
-      "company": "Sarvam AI",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.sarvam.ai/careers/jobs/13082",
-      "relevance_score": 75,
-      "priority": "P0",
-      "role_summary": "Product Manager for Sarvam AI's core model products, likely owning the product roadmap, user research, and market strategy for Sarvam's Indic language AI models.",
-      "why_good_fit": "Jay's MetaAI India growth work \u2014 particularly the insight that Indian GenZ users prioritize language structure, tone, and persona over factual correctness \u2014 is directly applicable to a company building Indic language AI models. His experience sizing opportunities, writing product insights, and pitching to product teams at Meta translates perfectly. His AI fluency (top 5% Metamate user, personal AI OS) demonstrates he can operate at the frontier. Resso's ML recommendation engine work shows he can collaborate with ML teams on model-driven products without being an engineer.",
-      "how_to_win": "Frame yourself as the 'voice of the Indian user' for Sarvam's models \u2014 exactly the role you played at Meta but now at a company where India IS the entire market. Lead with the language-as-product-lever insight from MetaAI field work. Cite the 10%/90% content insight from Resso as proof you can find the data patterns that shape model/product strategy. Highlight your methodology: field observation \u2192 insight \u2192 product recommendation \u2192 execution. Address on-site honestly and show willingness to be in Bengaluru.",
-      "job_description": "This PM owns the product strategy and roadmap for Sarvam's AI models \u2014 likely including Indic language LLMs, speech models, and translation capabilities. Day-to-day involves defining model product requirements based on user needs, working with ML researchers on prioritization, conducting user research to understand how Indian users interact with AI models, and driving adoption. Success means models that Indian users and developers love and adopt at scale.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T18:07:15.781201Z"
-    },
-    {
-      "id": "sarvam-ai-product-manager-chanakya",
-      "title": "Product Manager, Chanakya",
-      "company": "Sarvam AI",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.sarvam.ai/careers/jobs/28816",
-      "relevance_score": 72,
-      "priority": "P0",
-      "role_summary": "Product Manager for Sarvam AI's Chanakya product \u2014 likely a government/enterprise-focused AI deployment platform, given the Delhi presence and 'strategic deployment' roles in the same product line.",
-      "why_good_fit": "Jay's experience driving product adoption across diverse Indian user segments \u2014 from informal SMBs to enterprises \u2014 is relevant for a product that likely serves government and large enterprise clients. His methodology of deep discovery \u2192 insight writing \u2192 pitching \u2192 execution partnership maps well to enterprise AI product management. The SMB enforcement work at Meta (influencing policy teams, creating new product teams) shows he can navigate complex stakeholder environments similar to government deployments. His AI fluency and understanding of Indian user needs at scale are core assets.",
-      "how_to_win": "Position the SMB enforcement story as proof of navigating complex institutional stakeholders \u2014 policy teams at Meta are analogous to government stakeholders. Highlight the ability to translate technical AI capabilities into user-facing value (MetaAI field work, Metamate OS). Show understanding of India's digital public infrastructure vision and how Sarvam's Chanakya fits. Be transparent about the enterprise/government being a newer domain while emphasizing transferable skills in stakeholder management and user research.",
-      "job_description": "This PM owns the product experience for Chanakya, Sarvam's likely government/enterprise AI platform. Day-to-day involves understanding deployment requirements, defining product features that serve institutional users, working with engineering and ML teams on delivery, and ensuring successful adoption. Success means Chanakya deployments that deliver measurable value for government and enterprise clients across India.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T18:07:15.781201Z"
-    },
-    {
-      "id": "sarvam-ai-product-manager-general",
-      "title": "Product Manager",
-      "company": "Sarvam AI",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.sarvam.ai/careers/jobs/28847",
-      "relevance_score": 74,
-      "priority": "P0",
-      "role_summary": "General Product Manager role at Sarvam AI, likely spanning one or more of their AI product lines serving Indian users and developers.",
-      "why_good_fit": "Sarvam AI is building AI for India \u2014 Jay has spent 7 years building products for Indian users at global tech companies. His core superpower (translating on-ground Indian user observations into product decisions at scale) is exactly what an India-first AI company needs. The Resso zero-to-one experience, MetaAI India growth work, SMB enforcement impact (2.3% revenue uplift), and deep understanding of Tier 2/3 Indian users all make him a differentiated candidate. His AI fluency (personal AI OS, top 5% Metamate usage) shows he's not just a traditional PM \u2014 he lives and breathes AI tools.",
-      "how_to_win": "This is a general PM listing \u2014 use it as an opportunity to pitch yourself broadly. Lead with: 'I've been the India voice inside global companies for 7 years \u2014 I want to be at a company where India IS the mission.' Tell the Dahod bakery story to show depth of user empathy. Cite the Resso scaling story for zero-to-one credibility. Highlight the MetaAI language insight for direct Sarvam relevance. Show your AI OS as proof you're an AI-native PM, not just AI-curious.",
-      "job_description": "A Product Manager at Sarvam AI owns product strategy and execution for AI products serving Indian users and developers. Day-to-day involves user research, roadmap definition, cross-functional collaboration with ML and engineering teams, and driving product adoption. Success means shipping AI products that Indian users adopt and love, with measurable growth in usage and business metrics.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T18:07:15.781201Z"
-    },
-    {
-      "id": "sarvam-ai-gtm-strategy-model-api",
-      "title": "GTM & Strategy, Model API",
-      "company": "Sarvam AI",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.sarvam.ai/careers/jobs/31776",
-      "relevance_score": 76,
-      "priority": "P0",
-      "role_summary": "Go-to-market and strategy role for Sarvam AI's Model API product, focused on driving developer and enterprise adoption of Sarvam's AI model APIs.",
-      "why_good_fit": "Jay's experience driving product adoption and growth strategy at Meta and ByteDance translates well to API GTM. His SMB work at Meta (understanding how Indian businesses actually use digital tools) is directly relevant for driving API adoption among Indian developers and enterprises. The Shoppertainment big bet identification shows strategic thinking ability. His competitive intelligence work (TikTok re-entry strategy, daily competitor monitoring) maps to understanding the API competitive landscape (OpenAI, Google, Anthropic APIs vs. Sarvam). His AI fluency means he deeply understands the developer/user perspective for AI APIs.",
-      "how_to_win": "Frame yourself as someone who understands both the supply side (AI models, capabilities) and the demand side (how Indian businesses and developers actually want to use AI). Lead with the SMB insight \u2014 Indian businesses operate differently from global assumptions, and this applies to API adoption too. Cite competitive intelligence experience from Meta (TikTok re-entry strategy) as proof you can map competitive landscapes. Show your personal AI OS as evidence you understand the developer experience of working with AI APIs. Highlight opportunity sizing skills from Meta.",
-      "job_description": "This role owns the go-to-market strategy for Sarvam's Model API products \u2014 defining target segments, pricing strategy, developer adoption playbooks, and competitive positioning. Day-to-day involves market analysis, developer ecosystem engagement, partnership strategy, and working with product and engineering to ensure API products meet market needs. Success means growing API adoption, revenue, and developer ecosystem for Sarvam's Indic AI models.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T18:07:15.781201Z"
-    },
-    {
-      "id": "sarvam-ai-product-marketing-manager-enterprise",
-      "title": "Product Marketing Manager , Enterprise",
-      "company": "Sarvam AI",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.sarvam.ai/careers/jobs/19531",
-      "relevance_score": 58,
-      "priority": "P1",
-      "role_summary": "Product Marketing Manager for Sarvam AI's enterprise products, focused on positioning, messaging, and driving enterprise adoption of Sarvam's AI solutions.",
-      "why_good_fit": "Jay's insight writing, pitch deck building, and stakeholder buy-in skills at Meta are transferable to product marketing. His competitive intelligence work and ability to craft strategic narratives (country context documents, product opportunity assessments) align with PMM responsibilities. Sarvam's India-first AI mission resonates with his core expertise. However, Jay's experience is more product management than product marketing \u2014 this is a reasonable but not perfect fit.",
-      "how_to_win": "Position your insight writing and pitching methodology at Meta as product marketing in practice \u2014 you've been crafting narratives, sizing opportunities, and securing buy-in from product teams, which is essentially internal product marketing. Highlight the Shoppertainment narrative work and TikTok re-entry strategy as examples of strategic storytelling. Be honest that your background is PM-first but argue that a PM-turned-PMM brings deeper product intuition to marketing.",
-      "job_description": "This role owns product marketing for Sarvam's enterprise AI solutions \u2014 crafting positioning, messaging, sales enablement materials, and go-to-market campaigns for enterprise buyers. Day-to-day involves market research, competitive analysis, content creation, and working with sales and product teams. Success means enterprise customers understanding and buying Sarvam's AI products.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T18:07:15.781201Z"
-    },
-    {
-      "id": "sarvam-ai-engagement-principal-chanakya",
-      "title": "Engagement Principal, Chanakya",
-      "company": "Sarvam AI",
-      "location": "Delhi, India",
-      "url": "https://www.sarvam.ai/careers/jobs/29374",
-      "relevance_score": 52,
-      "priority": "P1",
-      "role_summary": "Senior client engagement role for Sarvam AI's Chanakya product, likely managing strategic deployments and client relationships for government/enterprise AI implementations.",
-      "why_good_fit": "Jay's cross-functional leadership and stakeholder management at Meta (working across product, policy, engineering, marketing teams) is relevant. His experience influencing senior leadership (CPO-level at Meta) and navigating complex organizational dynamics could translate to managing strategic client engagements. However, this appears to be more of a consulting/client management role than a product role, which is a weaker fit for Jay's core strengths.",
-      "how_to_win": "If pursuing this, lead with the SMB enforcement story as an example of managing complex multi-stakeholder problems with significant business impact. Emphasize your ability to understand user needs deeply and translate them into actionable product/deployment recommendations. Be prepared to address the shift from product management to client engagement \u2014 frame it as applying product thinking to client success.",
-      "job_description": "This role likely manages strategic client engagements for Sarvam's Chanakya platform \u2014 working with government and enterprise clients to ensure successful AI deployments. Day-to-day involves client relationship management, deployment strategy, cross-functional coordination, and ensuring client outcomes. Success means successful, high-value deployments that drive client retention and expansion.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T18:07:15.781201Z"
-    },
-    {
-      "id": "sarvam-ai-partnerships-alliances-lead-gsis",
-      "title": "Partnerships & Alliances Lead (GSIs) - India",
-      "company": "Sarvam AI",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.sarvam.ai/careers/jobs/18470",
-      "relevance_score": 35,
-      "priority": "P2",
-      "role_summary": "Partnerships lead managing relationships with Global System Integrators (GSIs) like Accenture, TCS, Infosys to drive Sarvam AI's enterprise distribution in India.",
-      "why_good_fit": "While Sarvam AI is a compelling company, this is a traditional partnerships/BD role focused on managing GSI relationships \u2014 signing deals, managing C-suite relationships, and building channel partnerships. Jay's strengths are in product, user research, and market growth rather than enterprise partnership management. The role has limited product or growth mandate.",
-      "how_to_win": "Not recommended as a primary target. If Jay is very interested in Sarvam AI and other roles don't work out, he could frame his cross-functional stakeholder management at Meta as relevant, but this is a stretch.",
-      "job_description": "This role manages strategic partnerships with Global System Integrators to drive enterprise distribution of Sarvam's AI products. Day-to-day involves relationship management with GSI leadership, joint go-to-market planning, deal structuring, and channel enablement. Success means GSI partners actively selling and deploying Sarvam's AI solutions.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T18:07:15.781201Z"
-    },
     {
       "id": "senior-pm-android-developer-console-bengaluru",
       "title": "Senior Product Manager, Android Developer Console",
@@ -134,7 +14,8 @@
       "how_to_win": "Frame your Resso experience from the developer/publisher perspective \u2014 you understand what app developers need because you've been one. Highlight your understanding of the Indian developer ecosystem. Emphasize your zero-to-one experience and your ability to build tools that serve diverse user segments (Tier 2/3 developers, not just Silicon Valley). Mention your AI OS as evidence you can envision AI-powered developer tools.",
       "job_description": "You'll own product areas within Android Developer Console \u2014 the primary tool developers use to publish apps, manage releases, analyze performance, and grow their apps on Google Play. Day-to-day involves defining developer-facing features, working with engineering teams, gathering developer feedback, and shipping tools that improve the developer experience. Success means developers finding it easier and more effective to build and grow apps on Android.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pm-payments-risk-hyderabad",
@@ -149,7 +30,8 @@
       "how_to_win": "This is your SMB enforcement story on steroids. Lead with: 'At Meta, I discovered that our global enforcement model was over-blocking legitimate Indian SMBs \u2014 I drove the creation of a new product team, an agentic resolution system, and delivered a 2.3% India revenue uplift.' Frame this as a payments risk problem: false positives in enforcement = false positives in fraud detection. Emphasize that you understand the India-specific risk landscape \u2014 informal businesses that look suspicious to global models but are perfectly legitimate. Show you can balance risk mitigation with user growth.",
       "job_description": "You'll own the risk management product surface for Google's payment products \u2014 defining how fraud is detected, how legitimate transactions are protected, and how risk models are tuned. Day-to-day involves working with ML teams on risk models, analyzing fraud patterns, defining policy frameworks, and ensuring the right balance between security and user experience. Success means reducing fraud losses while minimizing false positives that block legitimate users.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pm-ewallets-bengaluru",
@@ -164,7 +46,8 @@
       "how_to_win": "Position yourself as someone who understands how money actually moves in India \u2014 not through global product assumptions, but through on-ground observation. Lead with the bakery story and SMB enforcement work. Emphasize that you've seen firsthand how Indian users (especially Tier 2/3) interact with digital financial tools. Highlight your Resso experience to show you can build consumer products from scratch. If the role involves emerging market expansion, lean into your India market intelligence as a competitive advantage.",
       "job_description": "You'll own product strategy and execution for Google's eWallet products, likely focused on digital wallet experiences for consumers and merchants. Day-to-day involves defining features, working with engineering and payments infrastructure teams, analyzing transaction data, and driving wallet adoption. Success means growing wallet usage, improving user retention, and expanding the merchant acceptance network.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pm-cloud-database-bengaluru",
@@ -179,7 +62,8 @@
       "how_to_win": "This is a stretch role. If applying, emphasize your technical product intuition and ability to learn domains quickly. Frame your data analysis work at Meta (Unidash, opportunity sizing) as adjacent. Highlight your AI-assisted data analysis capabilities. However, this is likely not the best use of Jay's application energy.",
       "job_description": "You'll own Google Cloud database products \u2014 managed database services used by enterprise customers for their applications. Day-to-day involves defining database product roadmaps, working with database engineering teams, gathering enterprise customer requirements, and shipping features. Success means growing database service adoption and customer satisfaction.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pm-payments-platform-bengaluru",
@@ -194,7 +78,8 @@
       "how_to_win": "Frame your Meta work on WhatsApp business products (API, Paid Messaging) as payments-adjacent platform experience. Lead with the SMB enforcement story to show you understand how platform decisions cascade to business outcomes. Emphasize your understanding of Indian payment behaviour \u2014 informal businesses, voice-led operations, UPI ecosystem dynamics. Position yourself as someone who brings the user perspective to platform decisions.",
       "job_description": "You'll own parts of Google's payments platform \u2014 the infrastructure layer that powers payment experiences across Google products. Day-to-day involves defining platform capabilities, working with engineering teams on scalability and reliability, and ensuring the platform supports product teams building payment features. Success means a robust, scalable payments platform that enables rapid feature development.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pm-google-play-apps-bengaluru",
@@ -209,7 +94,8 @@
       "how_to_win": "Frame your Resso experience as app ecosystem expertise \u2014 you built and scaled an app from alpha to India's #1 in its category on Android. You understand app discovery, user acquisition, and retention in the Indian market. Highlight your insight about Tier 2/3 users being underserved by global products \u2014 this applies directly to Google Play's India opportunity. Mention your competitive intelligence work (TikTok re-entry strategy) to show you understand platform dynamics. Emphasize your AI fluency as relevant to AI-powered app discovery.",
       "job_description": "You'll own a product area within Google Play Apps \u2014 the world's largest app marketplace. Day-to-day involves defining features that improve app discovery, developer tools, or user engagement, working with engineering teams, analyzing marketplace data, and driving growth metrics. Success means growing app installs, improving developer satisfaction, and enhancing the user experience of finding and using apps.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pm-google-pay-bengaluru",
@@ -224,7 +110,8 @@
       "how_to_win": "Lead with the Dahod bakery story \u2014 you discovered a massive enforcement problem by talking to a real SMB owner, then drove a 2.3% India revenue uplift. This shows you understand Indian merchants at a visceral level. Frame your SMB growth work at Meta as directly transferable to Google Pay's merchant ecosystem. Highlight your insight that Indian SMBs operate through voice-led WhatsApp \u2014 this is the kind of on-ground intelligence Google Pay needs. Mention your Shoppertainment work to show you think about payments as part of a broader commerce ecosystem, not just transactions.",
       "job_description": "You'll own a product area within Google Pay, India's massive consumer payments platform. Day-to-day involves defining product strategy for user-facing payment experiences, working with engineering and design to ship features, analyzing user behaviour data, and driving adoption metrics. Success means growing active users, transaction volume, and merchant engagement on the platform.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pm-ai-gaming-google-play-bengaluru",
@@ -239,7 +126,8 @@
       "how_to_win": "Lead with your AI fluency story \u2014 you built a personal AI operating system on Metamate, automating 80% of tasks, top 5% user globally. Then connect to your consumer product experience: Resso's ML-driven recommendation engine is analogous to AI-powered game discovery. Highlight your understanding of Indian mobile gaming users (Tier 2/3, regional, GenZ). Frame yourself as someone who can bridge AI capabilities with consumer product intuition \u2014 not just an engineer, but someone who understands what AI features users actually want.",
       "job_description": "You'll own AI-powered gaming features on Google Play \u2014 think AI-driven game discovery, personalized recommendations, or AI-enhanced gaming experiences. Day-to-day involves defining AI product strategy for gaming, working with ML and engineering teams, running user research with gamers, and shipping features that grow gaming engagement on Play. Success means leveraging AI to meaningfully improve the gaming experience and drive growth metrics.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pm-google-cloud-business-platform-hyderabad",
@@ -254,7 +142,8 @@
       "how_to_win": "If applying, emphasize your cross-functional execution skills and zero-to-one building experience (Resso founding team). Frame your SMB work as understanding how businesses adopt technology platforms. Highlight your AI fluency as relevant to Cloud's AI integration strategy. Be honest that your background is more consumer-facing but position the transition as bringing fresh user-centric thinking to enterprise products.",
       "job_description": "You'll own product areas within Google Cloud's business platform \u2014 tools and infrastructure that enterprise customers use to manage their Cloud deployments. Day-to-day involves defining product requirements, working with engineering teams, gathering customer feedback, and shipping platform features. Success means enterprise customers adopting and getting value from the platform.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pm-youtube-create-bengaluru",
@@ -269,7 +158,8 @@
       "how_to_win": "Lead with the Resso founding story \u2014 zero-to-one creator product, ML-driven recommendations, scaling to beat Spotify in India. Then pivot to Meta's creator growth work and Shoppertainment. Frame yourself as someone who understands what creators in India actually need (not what global teams assume). Emphasize your field research methodology \u2014 20+ AI user interviews, bakery SMB discovery \u2014 as evidence you'll bring real creator insights to YouTube Create. Mention your AI OS built on Metamate as proof you can leverage AI tools to accelerate product development.",
       "job_description": "You'll own product strategy and execution for YouTube Create, a creator-focused tool that helps YouTubers produce and edit content. Day-to-day involves defining product roadmaps, working with engineering and design teams, running user research with creators, and shipping features that grow creator adoption and content quality. Success means more creators using YouTube Create to produce better content, driving engagement and platform growth.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pm-youtube-live-living-room-bengaluru",
@@ -284,7 +174,8 @@
       "how_to_win": "Frame your Resso story as evidence you understand content consumption product-market fit \u2014 you identified that 10% of content drove 90% of listening, then shaped the recommendation engine. Connect this to live content discovery on TV. Highlight Shoppertainment as proof you understand live streaming's commercial potential. Emphasize your field research skills \u2014 you can go into Indian living rooms and understand how families actually use YouTube on TV. Position the 3-year minimum as an opportunity for you to come in as a senior voice with 7 years of relevant experience.",
       "job_description": "You'll own the YouTube Live experience on TV and living room devices \u2014 think smart TVs, streaming sticks, and gaming consoles. Day-to-day involves defining features that make live content more discoverable and engaging on the big screen, working with engineering and UX teams, and running experiments to improve viewer retention. Success means growing live viewership on TV surfaces and creating differentiated experiences that leverage the living room context.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pm-applied-ai-google-cloud-bengaluru",
@@ -299,7 +190,8 @@
       "how_to_win": "Lead with your MetaAI India field work \u2014 you conducted 20+ interviews with AI enthusiasts and discovered that for Indian users, language aspects (tone, structure, persona) matter more than factual correctness. This is a product insight that directly impacts how Applied AI products should be built for the India market. Then showcase your personal AI OS \u2014 you didn't just use AI tools, you built an operating system of agents on top of them. Frame yourself as a PM who deeply understands AI from the user side, not just the engineering side. Acknowledge the B2B/Cloud context is newer for you, but position your consumer AI insights as a differentiator.",
       "job_description": "You'll own Applied AI product features on Google Cloud \u2014 bringing GenAI and LLM capabilities to enterprise customers. Day-to-day involves defining product roadmaps for AI features, working with ML research and engineering teams, gathering customer requirements, and shipping AI products that drive Cloud adoption. Success means enterprise customers adopting and getting value from Google Cloud's AI capabilities.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pmm-google-search-gurugram",
@@ -314,7 +206,8 @@
       "how_to_win": "Position your IPGS role at Meta as product marketing in practice \u2014 you wrote insights, built pitch decks, influenced product teams, and drove market strategy. Frame your competitive intelligence work (TikTok re-entry strategy) as marketing strategy. Highlight your understanding of how Indian users actually search \u2014 regional language patterns, voice-led behaviour, GenZ search habits. Acknowledge the marketing title is new but argue your skills are directly transferable. The Gurugram location is a concern for remote preference \u2014 clarify flexibility.",
       "job_description": "You'll own product marketing strategy for Google Search \u2014 defining how Search products are positioned, launched, and grown in the market. Day-to-day involves developing marketing campaigns, working with product teams on launch strategy, analyzing market data, and driving user adoption. Success means growing Search usage and awareness through effective marketing.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pmm-google-play-core-growth-bengaluru",
@@ -329,7 +222,8 @@
       "how_to_win": "Lead with Resso's growth story \u2014 you helped scale a platform from zero to India's #1 in its category. Frame your Meta IPGS work as growth marketing in practice. Highlight your understanding of what drives app adoption in India's Tier 2/3 markets. Emphasize your competitive intelligence skills (you monitored competitors daily at Meta) as relevant to growth strategy. Position yourself as someone who brings product intuition to marketing decisions.",
       "job_description": "You'll own growth marketing strategy for Google Play \u2014 defining how to acquire and retain users and developers on the platform. Day-to-day involves developing growth campaigns, working with product teams on feature launches, analyzing growth metrics, and driving adoption. Success means growing Play's user base and developer ecosystem through effective marketing.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "pmm-subscriptions-consumer-growth-gurgaon",
@@ -344,7 +238,8 @@
       "how_to_win": "Lead with Resso \u2014 you helped build India's largest music streaming app, which was fundamentally a subscription product. You understand what makes Indian consumers subscribe vs. churn. Highlight your GenZ expertise \u2014 this is the core subscription demographic. Frame your Meta work on Shoppertainment and SMB monetisation as understanding consumer spending behaviour. Emphasize your ability to run consumer-facing campaigns informed by deep user research.",
       "job_description": "You'll own marketing strategy for Google's subscription products \u2014 driving consumer awareness, trial, and conversion for services like YouTube Premium, Google One, etc. Day-to-day involves developing integrated marketing campaigns (ATL, digital, BTL), working with product teams on feature launches, and driving subscription growth metrics. Success means growing subscriber base and reducing churn.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "mcommerce-marketing-manager-google-play-bengaluru",
@@ -359,7 +254,8 @@
       "how_to_win": "Lead with Shoppertainment \u2014 you helped define Meta India's biggest monetisation opportunity at the intersection of commerce and entertainment. Frame your SMB work as understanding how Indian merchants go digital. Highlight your understanding of Indian mCommerce dynamics \u2014 UPI adoption, social commerce, WhatsApp-based selling. Position yourself as someone who brings deep India commerce insights to Google Play's mCommerce strategy.",
       "job_description": "You'll own GTM marketing strategy for mobile commerce apps on Google Play \u2014 helping mCommerce apps grow their presence and user base on the platform. Day-to-day involves developing marketing programs, working with app developers, analyzing marketplace data, and driving mCommerce app adoption. Success means growing the mCommerce app ecosystem on Google Play.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "strategy-ops-lead-gbo-tools-hyderabad",
@@ -374,7 +270,8 @@
       "how_to_win": "Frame your Meta IPGS methodology as strategy & operations in practice \u2014 you built half plans, defined milestones, tracked execution, and drove cross-functional alignment. Highlight your AI OS as evidence you can think about tools strategy from a user perspective. Emphasize your consulting-like skills: opportunity sizing, business cases, stakeholder pitching. Position yourself as someone who brings product thinking to operations roles.",
       "job_description": "You'll lead strategy and operations for Google's internal business operations tools \u2014 defining how tools are prioritized, developed, and adopted across the organization. Day-to-day involves strategic planning, stakeholder management, operational analysis, and driving tool adoption. Success means improving operational efficiency through better tools and processes.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "senior-associate-gtm-strategy-ops-gurugram",
@@ -389,7 +286,8 @@
       "how_to_win": "Frame your Meta IPGS work as GTM strategy \u2014 you identified market opportunities, built business cases, and drove product execution. Highlight your Shoppertainment work as GTM strategy for a new monetisation vertical. Emphasize your analytical skills and ability to size opportunities. However, consider whether this role's seniority matches your career trajectory before investing application energy.",
       "job_description": "You'll support go-to-market strategy and operations for Google's business products \u2014 analyzing market opportunities, building business cases, and driving operational execution. Day-to-day involves strategic analysis, cross-functional coordination, and operational planning. Success means effective GTM execution that drives business growth.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "growth-manager-bengaluru",
@@ -404,7 +302,8 @@
       "how_to_win": "Frame your Meta SMB work as advertiser growth \u2014 you helped convert active businesses to paying advertisers and drove 2.3% India revenue uplift. Highlight your understanding of Indian SMB advertising behaviour. Emphasize your product lens on growth \u2014 you don't just sell, you identify product opportunities that drive adoption. However, assess whether this is too sales-oriented for your career goals.",
       "job_description": "You'll drive advertiser growth for Google's advertising products \u2014 helping businesses adopt and scale their use of Google Ads. Day-to-day involves consultative selling, analyzing advertiser data, developing growth strategies, and working with cross-functional teams. Success means growing advertiser spend and adoption.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z"
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
     },
     {
       "id": "openai-ai-deployment-manager-india",
@@ -419,7 +318,8 @@
       "how_to_win": "Lean into your understanding of how Indian businesses adopt technology \u2014 the SMB enforcement story shows you understand the gap between how global products assume Indian businesses work vs. reality. Highlight your AI OS as proof you can deeply understand deployment challenges. Position your field work with enterprises and SMBs during MetaAI India as direct experience understanding AI adoption barriers. Be transparent that your strength is the market intelligence and user understanding layer, and frame that as the missing piece in deployment success \u2014 technical deployment fails when you don't understand the user context.",
       "job_description": "This role manages the deployment and adoption of OpenAI's AI products for customers in India. Day-to-day likely involves working with Indian enterprises and startups to successfully integrate OpenAI's APIs, troubleshooting adoption challenges, and ensuring customers achieve value from the products. Success looks like high customer satisfaction, successful deployments, and growing usage.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T17:16:01.174015Z"
+      "scraped_at": "2026-04-10T17:16:01.174015Z",
+      "analysis_source": "cache"
     },
     {
       "id": "openai-communications-manager-india",
@@ -434,7 +334,8 @@
       "how_to_win": "Not recommended as a primary application. If Jay decides to apply, he should frame his insight writing and stakeholder influence work at Meta as communications-adjacent \u2014 he's been shaping narratives about India for global product teams. But this would be a career pivot, not a natural progression.",
       "job_description": "This role owns OpenAI's communications strategy in India \u2014 managing media relations, public narratives, crisis communications, and brand positioning. Day-to-day involves working with journalists, crafting press materials, managing public perception, and coordinating with global comms teams. Success looks like positive brand perception and effective narrative management in India.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T17:16:01.174015Z"
+      "scraped_at": "2026-04-10T17:16:01.174015Z",
+      "analysis_source": "cache"
     },
     {
       "id": "openai-consumer-marketing-manager-india",
@@ -449,7 +350,8 @@
       "how_to_win": "Position yourself as someone who doesn't just market products but understands the Indian consumer psyche deeply enough to shape the marketing strategy from first principles. Lead with the MetaAI insight about language as a growth lever \u2014 this is a marketing goldmine for ChatGPT India. Share the Resso story: how you understood that Tier 2/3 Indian users needed a fundamentally different product positioning than what Spotify offered. Emphasize your GenZ Product Council membership and the nuanced Indian GenZ behaviours you've mapped. Frame your pitch: 'I know which Indian users will adopt ChatGPT next, why they'll adopt it, and what message will resonate \u2014 because I've spent years in the field with these exact users.'",
       "job_description": "This role owns consumer marketing strategy for OpenAI in India \u2014 crafting campaigns, positioning, and go-to-market strategies that drive ChatGPT awareness and adoption among Indian consumers. Day-to-day involves market research, campaign development, cross-functional collaboration with product and growth teams, and measuring marketing effectiveness. Success looks like growing ChatGPT's consumer brand and user base in India.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T17:16:01.174015Z"
+      "scraped_at": "2026-04-10T17:16:01.174015Z",
+      "analysis_source": "cache"
     },
     {
       "id": "openai-growth-india",
@@ -464,7 +366,40 @@
       "how_to_win": "Lead with the narrative: 'I've spent 7 years figuring out how global tech products win in India \u2014 and I've done it at both ByteDance and Meta.' Open with the Dahod bakery \u2192 10M businesses \u2192 2.3% revenue uplift story as proof of ground-up India growth. Then pivot to the MetaAI India insight about language as a growth lever \u2014 this directly applies to ChatGPT's India opportunity. Emphasize the Resso story (beat Spotify in India by understanding Tier 2/3 users) as evidence of scaling a consumer product in India from zero. Highlight the AI OS you built on Metamate as proof of AI-native thinking. Frame your pitch around OpenAI's India opportunity: voice-first AI for regional users, vernacular ChatGPT adoption, SMB AI tools for India's informal economy. You understand these users because you've lived among them.",
       "job_description": "This role likely owns OpenAI's India growth strategy \u2014 driving ChatGPT user acquisition, engagement, and retention across India's diverse user segments. Day-to-day involves identifying growth levers specific to the Indian market, running experiments, building local market intelligence, and partnering with product and engineering teams to adapt the product for India. Success looks like meaningful user growth metrics in India.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T17:16:01.174015Z"
+      "scraped_at": "2026-04-10T17:16:01.174015Z",
+      "analysis_source": "cache"
+    },
+    {
+      "id": "sarvam-ai-partnerships-alliances-lead-gsis",
+      "title": "Partnerships & Alliances Lead (GSIs) - India",
+      "company": "Sarvam AI",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://www.sarvam.ai/careers/jobs/18470",
+      "relevance_score": 35,
+      "priority": "P2",
+      "role_summary": "Partnerships lead managing relationships with Global System Integrators (GSIs) like Accenture, TCS, Infosys to drive Sarvam AI's enterprise distribution in India.",
+      "why_good_fit": "While Sarvam AI is a compelling company, this is a traditional partnerships/BD role focused on managing GSI relationships \u2014 signing deals, managing C-suite relationships, and building channel partnerships. Jay's strengths are in product, user research, and market growth rather than enterprise partnership management. The role has limited product or growth mandate.",
+      "how_to_win": "Not recommended as a primary target. If Jay is very interested in Sarvam AI and other roles don't work out, he could frame his cross-functional stakeholder management at Meta as relevant, but this is a stretch.",
+      "job_description": "This role manages strategic partnerships with Global System Integrators to drive enterprise distribution of Sarvam's AI products. Day-to-day involves relationship management with GSI leadership, joint go-to-market planning, deal structuring, and channel enablement. Success means GSI partners actively selling and deploying Sarvam's AI solutions.",
+      "date_published": "Not listed",
+      "scraped_at": "2026-04-10T18:07:15.781201Z",
+      "analysis_source": "cache"
+    },
+    {
+      "id": "sarvam-ai-engagement-principal-chanakya",
+      "title": "Engagement Principal, Chanakya",
+      "company": "Sarvam AI",
+      "location": "Delhi, India",
+      "url": "https://www.sarvam.ai/careers/jobs/29374",
+      "relevance_score": 52,
+      "priority": "P1",
+      "role_summary": "Senior client engagement role for Sarvam AI's Chanakya product, likely managing strategic deployments and client relationships for government/enterprise AI implementations.",
+      "why_good_fit": "Jay's cross-functional leadership and stakeholder management at Meta (working across product, policy, engineering, marketing teams) is relevant. His experience influencing senior leadership (CPO-level at Meta) and navigating complex organizational dynamics could translate to managing strategic client engagements. However, this appears to be more of a consulting/client management role than a product role, which is a weaker fit for Jay's core strengths.",
+      "how_to_win": "If pursuing this, lead with the SMB enforcement story as an example of managing complex multi-stakeholder problems with significant business impact. Emphasize your ability to understand user needs deeply and translate them into actionable product/deployment recommendations. Be prepared to address the shift from product management to client engagement \u2014 frame it as applying product thinking to client success.",
+      "job_description": "This role likely manages strategic client engagements for Sarvam's Chanakya platform \u2014 working with government and enterprise clients to ensure successful AI deployments. Day-to-day involves client relationship management, deployment strategy, cross-functional coordination, and ensuring client outcomes. Success means successful, high-value deployments that drive client retention and expansion.",
+      "date_published": "Not listed",
+      "scraped_at": "2026-04-10T18:07:15.781201Z",
+      "analysis_source": "cache"
     },
     {
       "id": "sarvam-ai-engagement-manager-chanakya-delhi",
@@ -479,7 +414,104 @@
       "how_to_win": "Lead with the Dahod bakery \u2192 10M SMBs story as proof of translating India ground-truth into scaled product impact. Frame yourself as someone who doesn't just manage engagements but discovers product opportunities within them \u2014 cite the SMB enforcement case where a client-side observation became Meta's largest India revenue feature. Emphasize your vernacular/regional user expertise (Resso Tier 2/3 thesis, MetaAI language insight) as directly relevant to Sarvam's Indic AI mission. Show your AI OS and automation fluency to demonstrate you're not just AI-adjacent but AI-native. Ask pointed questions about whether Chanakya engagement managers feed product insights back to the core team \u2014 position yourself as someone who would naturally do that. Address the Delhi relocation question head-on with a willingness narrative or propose a hybrid arrangement.",
       "job_description": "This role likely involves managing the deployment, adoption, and success of Sarvam AI's Chanakya product (possibly a government/enterprise-facing AI solution) with key stakeholders in Delhi. Day-to-day would include client engagement, understanding deployment needs, coordinating with Sarvam's product and engineering teams, and ensuring successful outcomes. Success looks like driving adoption, expanding use cases, and feeding client insights back into the product roadmap.",
       "date_published": "Not listed",
-      "scraped_at": "2026-04-10T18:04:37.610226Z"
+      "scraped_at": "2026-04-10T18:04:37.610226Z",
+      "analysis_source": "cache"
+    },
+    {
+      "id": "sarvam-ai-gtm-product-vision",
+      "title": "GTM/Product , Vision",
+      "company": "Sarvam AI",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://www.sarvam.ai/careers/jobs/28772",
+      "relevance_score": 78,
+      "priority": "P0",
+      "role_summary": "A GTM and product role for Sarvam AI's Vision product line, likely involving go-to-market strategy, product positioning, and market adoption for AI vision capabilities in India.",
+      "why_good_fit": "Sarvam AI is India's leading AI-native company building for Indian languages and users \u2014 directly aligned with Jay's superpower of translating Indian user observations into product decisions. His MetaAI India field work (20+ AI user interviews), discovery that language/tone matters more than factual correctness for Indian GenZ, and his GTM instincts from scaling Resso from alpha to India's largest music streaming app make him a strong fit. His experience with AI product adoption (MetaAI India growth) and SMB/consumer segments in India is highly relevant for an AI company expanding its product footprint domestically.",
+      "how_to_win": "Lead with the Sarvam-specific narrative: 'I've spent my career finding the Indian users that global products overlook \u2014 Sarvam is building AI for exactly those users.' Cite the MetaAI field work insight about language as a product growth lever (directly relevant to Sarvam's Indic language focus). Highlight Resso's zero-to-one scaling as proof of GTM execution. Emphasize the personal AI OS built on Metamate as evidence of deep AI product fluency. Address the on-site requirement honestly \u2014 express willingness to relocate or negotiate hybrid given the mission alignment.",
+      "job_description": "This role sits at the intersection of product management and go-to-market for Sarvam AI's Vision product. Day-to-day likely involves defining product positioning, identifying target customer segments, driving adoption strategy, and working closely with ML engineers to translate technical capabilities into market-ready products. Success means driving adoption and revenue for Sarvam's vision AI offerings across Indian enterprise and consumer segments.",
+      "date_published": "Not listed",
+      "scraped_at": "2026-04-10T18:07:15.781201Z",
+      "analysis_source": "cache"
+    },
+    {
+      "id": "sarvam-ai-product-manager-models",
+      "title": "Product Manager (Models)",
+      "company": "Sarvam AI",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://www.sarvam.ai/careers/jobs/13082",
+      "relevance_score": 75,
+      "priority": "P0",
+      "role_summary": "Product Manager for Sarvam AI's core model products, likely owning the product roadmap, user research, and market strategy for Sarvam's Indic language AI models.",
+      "why_good_fit": "Jay's MetaAI India growth work \u2014 particularly the insight that Indian GenZ users prioritize language structure, tone, and persona over factual correctness \u2014 is directly applicable to a company building Indic language AI models. His experience sizing opportunities, writing product insights, and pitching to product teams at Meta translates perfectly. His AI fluency (top 5% Metamate user, personal AI OS) demonstrates he can operate at the frontier. Resso's ML recommendation engine work shows he can collaborate with ML teams on model-driven products without being an engineer.",
+      "how_to_win": "Frame yourself as the 'voice of the Indian user' for Sarvam's models \u2014 exactly the role you played at Meta but now at a company where India IS the entire market. Lead with the language-as-product-lever insight from MetaAI field work. Cite the 10%/90% content insight from Resso as proof you can find the data patterns that shape model/product strategy. Highlight your methodology: field observation \u2192 insight \u2192 product recommendation \u2192 execution. Address on-site honestly and show willingness to be in Bengaluru.",
+      "job_description": "This PM owns the product strategy and roadmap for Sarvam's AI models \u2014 likely including Indic language LLMs, speech models, and translation capabilities. Day-to-day involves defining model product requirements based on user needs, working with ML researchers on prioritization, conducting user research to understand how Indian users interact with AI models, and driving adoption. Success means models that Indian users and developers love and adopt at scale.",
+      "date_published": "Not listed",
+      "scraped_at": "2026-04-10T18:07:15.781201Z",
+      "analysis_source": "cache"
+    },
+    {
+      "id": "sarvam-ai-product-manager-chanakya",
+      "title": "Product Manager, Chanakya",
+      "company": "Sarvam AI",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://www.sarvam.ai/careers/jobs/28816",
+      "relevance_score": 72,
+      "priority": "P0",
+      "role_summary": "Product Manager for Sarvam AI's Chanakya product \u2014 likely a government/enterprise-focused AI deployment platform, given the Delhi presence and 'strategic deployment' roles in the same product line.",
+      "why_good_fit": "Jay's experience driving product adoption across diverse Indian user segments \u2014 from informal SMBs to enterprises \u2014 is relevant for a product that likely serves government and large enterprise clients. His methodology of deep discovery \u2192 insight writing \u2192 pitching \u2192 execution partnership maps well to enterprise AI product management. The SMB enforcement work at Meta (influencing policy teams, creating new product teams) shows he can navigate complex stakeholder environments similar to government deployments. His AI fluency and understanding of Indian user needs at scale are core assets.",
+      "how_to_win": "Position the SMB enforcement story as proof of navigating complex institutional stakeholders \u2014 policy teams at Meta are analogous to government stakeholders. Highlight the ability to translate technical AI capabilities into user-facing value (MetaAI field work, Metamate OS). Show understanding of India's digital public infrastructure vision and how Sarvam's Chanakya fits. Be transparent about the enterprise/government being a newer domain while emphasizing transferable skills in stakeholder management and user research.",
+      "job_description": "This PM owns the product experience for Chanakya, Sarvam's likely government/enterprise AI platform. Day-to-day involves understanding deployment requirements, defining product features that serve institutional users, working with engineering and ML teams on delivery, and ensuring successful adoption. Success means Chanakya deployments that deliver measurable value for government and enterprise clients across India.",
+      "date_published": "Not listed",
+      "scraped_at": "2026-04-10T18:07:15.781201Z",
+      "analysis_source": "cache"
+    },
+    {
+      "id": "sarvam-ai-product-manager-general",
+      "title": "Product Manager",
+      "company": "Sarvam AI",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://www.sarvam.ai/careers/jobs/28847",
+      "relevance_score": 74,
+      "priority": "P0",
+      "role_summary": "General Product Manager role at Sarvam AI, likely spanning one or more of their AI product lines serving Indian users and developers.",
+      "why_good_fit": "Sarvam AI is building AI for India \u2014 Jay has spent 7 years building products for Indian users at global tech companies. His core superpower (translating on-ground Indian user observations into product decisions at scale) is exactly what an India-first AI company needs. The Resso zero-to-one experience, MetaAI India growth work, SMB enforcement impact (2.3% revenue uplift), and deep understanding of Tier 2/3 Indian users all make him a differentiated candidate. His AI fluency (personal AI OS, top 5% Metamate usage) shows he's not just a traditional PM \u2014 he lives and breathes AI tools.",
+      "how_to_win": "This is a general PM listing \u2014 use it as an opportunity to pitch yourself broadly. Lead with: 'I've been the India voice inside global companies for 7 years \u2014 I want to be at a company where India IS the mission.' Tell the Dahod bakery story to show depth of user empathy. Cite the Resso scaling story for zero-to-one credibility. Highlight the MetaAI language insight for direct Sarvam relevance. Show your AI OS as proof you're an AI-native PM, not just AI-curious.",
+      "job_description": "A Product Manager at Sarvam AI owns product strategy and execution for AI products serving Indian users and developers. Day-to-day involves user research, roadmap definition, cross-functional collaboration with ML and engineering teams, and driving product adoption. Success means shipping AI products that Indian users adopt and love, with measurable growth in usage and business metrics.",
+      "date_published": "Not listed",
+      "scraped_at": "2026-04-10T18:07:15.781201Z",
+      "analysis_source": "cache"
+    },
+    {
+      "id": "sarvam-ai-gtm-strategy-model-api",
+      "title": "GTM & Strategy, Model API",
+      "company": "Sarvam AI",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://www.sarvam.ai/careers/jobs/31776",
+      "relevance_score": 76,
+      "priority": "P0",
+      "role_summary": "Go-to-market and strategy role for Sarvam AI's Model API product, focused on driving developer and enterprise adoption of Sarvam's AI model APIs.",
+      "why_good_fit": "Jay's experience driving product adoption and growth strategy at Meta and ByteDance translates well to API GTM. His SMB work at Meta (understanding how Indian businesses actually use digital tools) is directly relevant for driving API adoption among Indian developers and enterprises. The Shoppertainment big bet identification shows strategic thinking ability. His competitive intelligence work (TikTok re-entry strategy, daily competitor monitoring) maps to understanding the API competitive landscape (OpenAI, Google, Anthropic APIs vs. Sarvam). His AI fluency means he deeply understands the developer/user perspective for AI APIs.",
+      "how_to_win": "Frame yourself as someone who understands both the supply side (AI models, capabilities) and the demand side (how Indian businesses and developers actually want to use AI). Lead with the SMB insight \u2014 Indian businesses operate differently from global assumptions, and this applies to API adoption too. Cite competitive intelligence experience from Meta (TikTok re-entry strategy) as proof you can map competitive landscapes. Show your personal AI OS as evidence you understand the developer experience of working with AI APIs. Highlight opportunity sizing skills from Meta.",
+      "job_description": "This role owns the go-to-market strategy for Sarvam's Model API products \u2014 defining target segments, pricing strategy, developer adoption playbooks, and competitive positioning. Day-to-day involves market analysis, developer ecosystem engagement, partnership strategy, and working with product and engineering to ensure API products meet market needs. Success means growing API adoption, revenue, and developer ecosystem for Sarvam's Indic AI models.",
+      "date_published": "Not listed",
+      "scraped_at": "2026-04-10T18:07:15.781201Z",
+      "analysis_source": "cache"
+    },
+    {
+      "id": "sarvam-ai-product-marketing-manager-enterprise",
+      "title": "Product Marketing Manager , Enterprise",
+      "company": "Sarvam AI",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://www.sarvam.ai/careers/jobs/19531",
+      "relevance_score": 58,
+      "priority": "P1",
+      "role_summary": "Product Marketing Manager for Sarvam AI's enterprise products, focused on positioning, messaging, and driving enterprise adoption of Sarvam's AI solutions.",
+      "why_good_fit": "Jay's insight writing, pitch deck building, and stakeholder buy-in skills at Meta are transferable to product marketing. His competitive intelligence work and ability to craft strategic narratives (country context documents, product opportunity assessments) align with PMM responsibilities. Sarvam's India-first AI mission resonates with his core expertise. However, Jay's experience is more product management than product marketing \u2014 this is a reasonable but not perfect fit.",
+      "how_to_win": "Position your insight writing and pitching methodology at Meta as product marketing in practice \u2014 you've been crafting narratives, sizing opportunities, and securing buy-in from product teams, which is essentially internal product marketing. Highlight the Shoppertainment narrative work and TikTok re-entry strategy as examples of strategic storytelling. Be honest that your background is PM-first but argue that a PM-turned-PMM brings deeper product intuition to marketing.",
+      "job_description": "This role owns product marketing for Sarvam's enterprise AI solutions \u2014 crafting positioning, messaging, sales enablement materials, and go-to-market campaigns for enterprise buyers. Day-to-day involves market research, competitive analysis, content creation, and working with sales and product teams. Success means enterprise customers understanding and buying Sarvam's AI products.",
+      "date_published": "Not listed",
+      "scraped_at": "2026-04-10T18:07:15.781201Z",
+      "analysis_source": "cache"
     }
   ]
 }
