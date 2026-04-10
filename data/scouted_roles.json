@@ -1,6 +1,21 @@
 {
-  "last_synced": "2026-04-10T17:34:38.127424Z",
+  "last_synced": "2026-04-10T18:04:58.241932Z",
   "roles": [
+    {
+      "id": "sarvam-ai-engagement-manager-chanakya-delhi",
+      "title": "Engagement Manager, Chanakya",
+      "company": "Sarvam AI",
+      "location": "Delhi, India",
+      "url": "https://www.sarvam.ai/careers/jobs/28820",
+      "relevance_score": 58,
+      "priority": "P1",
+      "role_summary": "Engagement Manager for Sarvam AI's Chanakya product \u2014 likely a client-facing role managing deployments and adoption of Sarvam's India-focused AI products with government or enterprise stakeholders in Delhi.",
+      "why_good_fit": "Sarvam AI is building India-native AI infrastructure (vernacular, voice-led, Indic language models) \u2014 directly aligned with Jay's core thesis of building for overlooked Indian users. His MetaAI India field work (20+ user interviews, language-as-growth-lever insight), SMB on-ground discovery methodology, and deep Tier 2/3 India understanding map well to helping Sarvam drive adoption. His experience translating user insights into product recommendations and securing cross-functional buy-in at Meta mirrors the engagement manager function of driving client success. His AI fluency (top 5% Metamate user, personal AI OS) signals genuine AI-native capability. However, the role is on-site in Delhi (not remote \u2014 conflicts with P0 non-negotiable), and 'Engagement Manager' may lean toward consulting/client management rather than pure product growth, which is a partial mismatch.",
+      "how_to_win": "Lead with the Dahod bakery \u2192 10M SMBs story as proof of translating India ground-truth into scaled product impact. Frame yourself as someone who doesn't just manage engagements but discovers product opportunities within them \u2014 cite the SMB enforcement case where a client-side observation became Meta's largest India revenue feature. Emphasize your vernacular/regional user expertise (Resso Tier 2/3 thesis, MetaAI language insight) as directly relevant to Sarvam's Indic AI mission. Show your AI OS and automation fluency to demonstrate you're not just AI-adjacent but AI-native. Ask pointed questions about whether Chanakya engagement managers feed product insights back to the core team \u2014 position yourself as someone who would naturally do that. Address the Delhi relocation question head-on with a willingness narrative or propose a hybrid arrangement.",
+      "job_description": "This role likely involves managing the deployment, adoption, and success of Sarvam AI's Chanakya product (possibly a government/enterprise-facing AI solution) with key stakeholders in Delhi. Day-to-day would include client engagement, understanding deployment needs, coordinating with Sarvam's product and engineering teams, and ensuring successful outcomes. Success looks like driving adoption, expanding use cases, and feeding client insights back into the product roadmap.",
+      "date_published": "Not listed",
+      "scraped_at": "2026-04-10T18:04:37.610226Z"
+    },
     {
       "id": "senior-pm-android-developer-console-bengaluru",
       "title": "Senior Product Manager, Android Developer Console",
