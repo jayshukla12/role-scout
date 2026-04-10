@@ -470,6 +470,8 @@
                 if (priorityFilter === 'P0' && job.priority !== 'P0') return false;
                 if (priorityFilter === 'P0-P1' && !['P0', 'P1'].includes(job.priority)) return false;
                 return true;
+            });
+
             // Sort strictly by relevance_score
             filtered.sort((a,b) => (b.relevance_score || 0) - (a.relevance_score || 0));
             const sorted = filtered;
