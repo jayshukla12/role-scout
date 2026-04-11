@@ -1,22 +1,6 @@
 {
-  "last_synced": "2026-04-11T02:07:14.565824Z",
+  "last_synced": "2026-04-11T12:56:16.973517Z",
   "roles": [
-    {
-      "id": "google-youtube-creation-platform-131926720994255558",
-      "title": "Senior Product Manager, YouTube, Creation and Platform",
-      "company": "Google",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/131926720994255558",
-      "relevance_score": 72,
-      "priority": "P1",
-      "role_summary": "Senior PM for YouTube's Creation and Platform team, focused on consumer-facing mobile development (Android & iOS). Requires 8 years experience (Jay has 7) and 2 years of 0-to-1 product launches. Covers creator tools and platform experiences on YouTube.",
-      "why_good_fit": "Strong alignment with Jay's creator economy expertise \u2014 from founding a music streaming platform to creator monetisation research and content relevance work at a major social platform. Deep experience with consumer-facing mobile products serving Indian creators and regional/vernacular user segments. Proven 0-to-1 track record as a founding team member of a music streaming app. YouTube Creation touches creators, India market, and consumer product \u2014 three of Jay's strongest domains.",
-      "how_to_win": "Lead with the Resso founding story (0-to-1, creator-centric product, scaled to market leadership in India) and creator monetisation research that shaped strategic direction at a major short-video platform. Highlight GenZ Product Council membership and deep understanding of Indian creator behaviours. Address the 8-year requirement gap by emphasising breadth: founding team experience + startup founder + current role at a top-tier social company. Proactively acknowledge the mobile development specificity gap and reframe around product intuition for creator tools and platform growth.",
-      "job_description": "Senior Product Manager, YouTube, Creation and Platform. 8 years experience in PM or related technical role for consumer-facing mobile development on Android and iOS. 2 years 0-to-1 experience.",
-      "date_published": null,
-      "scraped_at": null,
-      "analysis_source": "deep_brain"
-    },
     {
       "id": "google-play-app-spm-103537837034349254",
       "title": "Senior Product Manager, Google Play App",
@@ -31,39 +15,7 @@
       "job_description": "Senior Product Manager, Google Play App. 8 years PM experience, 3 years 0-to-1 product launches.",
       "date_published": null,
       "scraped_at": null,
-      "analysis_source": "deep_brain"
-    },
-    {
-      "id": "google-core-gtm-product-specialist-google-play-144041296875397830",
-      "title": "Core GTM Product Specialist, Google Play",
-      "company": "Google",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/144041296875397830",
-      "relevance_score": 57,
-      "priority": "P2",
-      "role_summary": "GTM Product Specialist for Google Play, requiring 8 years in product management or product specialist roles in online commerce or content business. Bridges product and go-to-market for Google's app/content ecosystem.",
-      "why_good_fit": "Jay's experience spans content businesses (music streaming platform, short-video platform) and go-to-market strategy (Shoppertainment, SMB advertiser conversion). The role's focus on digital content commerce aligns with his background in content distribution, creator ecosystems, and Indian market growth. His methodology of translating market insights into product recommendations mirrors the GTM Product Specialist function.",
-      "how_to_win": "Position as someone who bridges product insight and market execution \u2014 cite the methodology of discovery \u2192 insight \u2192 pitch \u2192 execution partnership. Highlight experience in content businesses (music streaming, social media) and understanding of India's app/content ecosystem. Emphasise competitive intelligence capabilities and ability to work cross-functionally across product, marketing, and business teams.",
-      "job_description": "Core GTM Product Specialist, Google Play. 8 years in product management or product specialist role in online commerce or content business. E-commerce, gaming, or apps digital content experience.",
-      "date_published": null,
-      "scraped_at": null,
-      "analysis_source": "deep_brain"
-    },
-    {
-      "id": "openai-ai-deployment-engineer-startups",
-      "title": "AI Deployment Engineer, Startups",
-      "company": "OpenAI",
-      "location": "India - Remote",
-      "url": "https://openai.com/careers/ai-deployment-engineer-startups-india-remote/",
-      "relevance_score": 55,
-      "priority": "P2",
-      "role_summary": "AI Deployment Engineer role at OpenAI focused on startups, based remotely in India. Part of the Technical Success team \u2014 likely involves helping startups integrate and deploy OpenAI's products. Limited job description available.",
-      "why_good_fit": "OpenAI is Jay's top target company. Remote India is his P0 preference. The startup ecosystem focus aligns with his entrepreneurial background and understanding of Indian SMBs/startups. His top-percentile AI tool fluency and personal AI operating system demonstrate deep product-level understanding of AI deployment. However, the 'Engineer' title suggests a technical implementation role which may not be ideal.",
-      "how_to_win": "Worth investigating the full JD \u2014 the 'Technical Success' team framing may be more consultative/GTM than pure engineering. If so, Jay should lead with his AI fluency (top 5% usage at current company, personal AI OS, multi-agent workflow experience) and startup founder background. Highlight ability to understand startup needs from first principles and translate AI capabilities into business outcomes. Flag risk: if this is a pure coding/engineering role, it's a discard.",
-      "job_description": "AI Deployment Engineer, Startups. Technical Success team. India - Remote. Limited details available.",
-      "date_published": null,
-      "scraped_at": null,
-      "analysis_source": "deep_brain"
+      "analysis_source": "cache"
     },
     {
       "id": "senior-pm-android-developer-console-bengaluru",
@@ -226,6 +178,22 @@
       "analysis_source": "cache"
     },
     {
+      "id": "google-youtube-creation-platform-131926720994255558",
+      "title": "Senior Product Manager, YouTube, Creation and Platform",
+      "company": "Google",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/131926720994255558",
+      "relevance_score": 72,
+      "priority": "P1",
+      "role_summary": "Senior PM for YouTube's Creation and Platform team, focused on consumer-facing mobile development (Android & iOS). Requires 8 years experience (Jay has 7) and 2 years of 0-to-1 product launches. Covers creator tools and platform experiences on YouTube.",
+      "why_good_fit": "Strong alignment with Jay's creator economy expertise \u2014 from founding a music streaming platform to creator monetisation research and content relevance work at a major social platform. Deep experience with consumer-facing mobile products serving Indian creators and regional/vernacular user segments. Proven 0-to-1 track record as a founding team member of a music streaming app. YouTube Creation touches creators, India market, and consumer product \u2014 three of Jay's strongest domains.",
+      "how_to_win": "Lead with the Resso founding story (0-to-1, creator-centric product, scaled to market leadership in India) and creator monetisation research that shaped strategic direction at a major short-video platform. Highlight GenZ Product Council membership and deep understanding of Indian creator behaviours. Address the 8-year requirement gap by emphasising breadth: founding team experience + startup founder + current role at a top-tier social company. Proactively acknowledge the mobile development specificity gap and reframe around product intuition for creator tools and platform growth.",
+      "job_description": "Senior Product Manager, YouTube, Creation and Platform. 8 years experience in PM or related technical role for consumer-facing mobile development on Android and iOS. 2 years 0-to-1 experience.",
+      "date_published": null,
+      "scraped_at": null,
+      "analysis_source": "cache"
+    },
+    {
       "id": "pm-youtube-live-living-room-bengaluru",
       "title": "Product Manager, YouTube Live Living Room",
       "company": "Google",
@@ -351,6 +319,38 @@
       "job_description": "You'll drive advertiser growth for Google's advertising products \u2014 helping businesses adopt and scale their use of Google Ads. Day-to-day involves consultative selling, analyzing advertiser data, developing growth strategies, and working with cross-functional teams. Success means growing advertiser spend and adoption.",
       "date_published": "Not listed",
       "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
+    },
+    {
+      "id": "google-core-gtm-product-specialist-google-play-144041296875397830",
+      "title": "Core GTM Product Specialist, Google Play",
+      "company": "Google",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/144041296875397830",
+      "relevance_score": 57,
+      "priority": "P2",
+      "role_summary": "GTM Product Specialist for Google Play, requiring 8 years in product management or product specialist roles in online commerce or content business. Bridges product and go-to-market for Google's app/content ecosystem.",
+      "why_good_fit": "Jay's experience spans content businesses (music streaming platform, short-video platform) and go-to-market strategy (Shoppertainment, SMB advertiser conversion). The role's focus on digital content commerce aligns with his background in content distribution, creator ecosystems, and Indian market growth. His methodology of translating market insights into product recommendations mirrors the GTM Product Specialist function.",
+      "how_to_win": "Position as someone who bridges product insight and market execution \u2014 cite the methodology of discovery \u2192 insight \u2192 pitch \u2192 execution partnership. Highlight experience in content businesses (music streaming, social media) and understanding of India's app/content ecosystem. Emphasise competitive intelligence capabilities and ability to work cross-functionally across product, marketing, and business teams.",
+      "job_description": "Core GTM Product Specialist, Google Play. 8 years in product management or product specialist role in online commerce or content business. E-commerce, gaming, or apps digital content experience.",
+      "date_published": null,
+      "scraped_at": null,
+      "analysis_source": "cache"
+    },
+    {
+      "id": "openai-ai-deployment-engineer-startups",
+      "title": "AI Deployment Engineer, Startups",
+      "company": "OpenAI",
+      "location": "India - Remote",
+      "url": "https://openai.com/careers/ai-deployment-engineer-startups-india-remote/",
+      "relevance_score": 55,
+      "priority": "P2",
+      "role_summary": "AI Deployment Engineer role at OpenAI focused on startups, based remotely in India. Part of the Technical Success team \u2014 likely involves helping startups integrate and deploy OpenAI's products. Limited job description available.",
+      "why_good_fit": "OpenAI is Jay's top target company. Remote India is his P0 preference. The startup ecosystem focus aligns with his entrepreneurial background and understanding of Indian SMBs/startups. His top-percentile AI tool fluency and personal AI operating system demonstrate deep product-level understanding of AI deployment. However, the 'Engineer' title suggests a technical implementation role which may not be ideal.",
+      "how_to_win": "Worth investigating the full JD \u2014 the 'Technical Success' team framing may be more consultative/GTM than pure engineering. If so, Jay should lead with his AI fluency (top 5% usage at current company, personal AI OS, multi-agent workflow experience) and startup founder background. Highlight ability to understand startup needs from first principles and translate AI capabilities into business outcomes. Flag risk: if this is a pure coding/engineering role, it's a discard.",
+      "job_description": "AI Deployment Engineer, Startups. Technical Success team. India - Remote. Limited details available.",
+      "date_published": null,
+      "scraped_at": null,
       "analysis_source": "cache"
     },
     {
