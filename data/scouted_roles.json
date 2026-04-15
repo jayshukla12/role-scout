@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-04-15T02:25:24.433157Z",
+  "last_synced": "2026-04-15T13:22:43.514624Z",
   "roles": [
     {
       "id": "pm-youtube-live-living-room-bengaluru",
@@ -125,22 +125,6 @@
       "why_good_fit": "Jay meets the 5-year PM experience requirement and has zero-to-one building experience. However, this role requires 2 years of database/analytics/big data product experience, which Jay lacks. It's a deeply technical B2B infrastructure role without India market growth or AI-native components. His consumer product and India market strengths don't translate strongly here.",
       "how_to_win": "This is a stretch role. If applying, emphasize your technical product intuition and ability to learn domains quickly. Frame your data analysis work at Meta (Unidash, opportunity sizing) as adjacent. Highlight your AI-assisted data analysis capabilities. However, this is likely not the best use of Jay's application energy.",
       "job_description": "You'll own Google Cloud database products \u2014 managed database services used by enterprise customers for their applications. Day-to-day involves defining database product roadmaps, working with database engineering teams, gathering enterprise customer requirements, and shipping features. Success means growing database service adoption and customer satisfaction.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z",
-      "analysis_source": "cache"
-    },
-    {
-      "id": "pm-youtube-create-bengaluru",
-      "title": "Product Manager, YouTube Create",
-      "company": "Google",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/97498845117588166",
-      "relevance_score": 88,
-      "priority": "P0",
-      "role_summary": "PM for YouTube Create \u2014 a consumer-facing creator tool product within YouTube, focused on enabling video creation and editing experiences for creators.",
-      "why_good_fit": "Jay's creator economy experience is directly transferable: he scaled Resso from alpha to India's largest music streaming app, led TikTok artist activation (Ghost Music Tab), and worked on creator monetisation research at ByteDance. At Meta, he contributed to Shoppertainment (creator-commerce convergence) and content relevance for regional/long-tail creators. His deep understanding of Indian GenZ creators (GenZ Product Council member) and regional/vernacular users gives him a unique edge for YouTube Create's India-based team. 5 years PM experience required \u2014 Jay has ~7 years, perfect seniority match.",
-      "how_to_win": "Lead with the Resso founding story \u2014 zero-to-one creator product, ML-driven recommendations, scaling to beat Spotify in India. Then pivot to Meta's creator growth work and Shoppertainment. Frame yourself as someone who understands what creators in India actually need (not what global teams assume). Emphasize your field research methodology \u2014 20+ AI user interviews, bakery SMB discovery \u2014 as evidence you'll bring real creator insights to YouTube Create. Mention your AI OS built on Metamate as proof you can leverage AI tools to accelerate product development.",
-      "job_description": "You'll own product strategy and execution for YouTube Create, a creator-focused tool that helps YouTubers produce and edit content. Day-to-day involves defining product roadmaps, working with engineering and design teams, running user research with creators, and shipping features that grow creator adoption and content quality. Success means more creators using YouTube Create to produce better content, driving engagement and platform growth.",
       "date_published": "Not listed",
       "scraped_at": "2026-04-10T16:05:44.579822Z",
       "analysis_source": "cache"
