@@ -1,22 +1,6 @@
 {
-  "last_synced": "2026-04-16T13:27:52.567535Z",
+  "last_synced": "2026-04-17T02:28:38.551140Z",
   "roles": [
-    {
-      "id": "pm-youtube-live-living-room-bengaluru",
-      "title": "Product Manager, YouTube Live Living Room",
-      "company": "Google",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/85393000904958662",
-      "relevance_score": 82,
-      "priority": "P0",
-      "role_summary": "PM for YouTube's live streaming experience on TV/living room devices \u2014 a consumer video product at the intersection of live content and the connected TV surface.",
-      "why_good_fit": "Jay has direct live streaming and video product experience from ByteDance (Resso, TikTok) and Meta (Shoppertainment \u2014 live commerce). His understanding of Indian consumer video consumption patterns, regional content preferences, and GenZ viewing behaviours (GenZ Product Council) is highly relevant. The 3-year experience minimum is well below Jay's ~7 years, making him a strong senior candidate. His Resso experience \u2014 building a content consumption product from scratch with ML-driven recommendations \u2014 maps directly to understanding how users discover and engage with live content on TV.",
-      "how_to_win": "Frame your Resso story as evidence you understand content consumption product-market fit \u2014 you identified that 10% of content drove 90% of listening, then shaped the recommendation engine. Connect this to live content discovery on TV. Highlight Shoppertainment as proof you understand live streaming's commercial potential. Emphasize your field research skills \u2014 you can go into Indian living rooms and understand how families actually use YouTube on TV. Position the 3-year minimum as an opportunity for you to come in as a senior voice with 7 years of relevant experience.",
-      "job_description": "You'll own the YouTube Live experience on TV and living room devices \u2014 think smart TVs, streaming sticks, and gaming consoles. Day-to-day involves defining features that make live content more discoverable and engaging on the big screen, working with engineering and UX teams, and running experiments to improve viewer retention. Success means growing live viewership on TV surfaces and creating differentiated experiences that leverage the living room context.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z",
-      "analysis_source": "cache"
-    },
     {
       "id": "pm-google-play-apps-bengaluru",
       "title": "Product Manager, Google Play Apps",
@@ -82,6 +66,22 @@
       "analysis_source": "cache"
     },
     {
+      "id": "senior-pm-android-developer-console-bengaluru",
+      "title": "Senior Product Manager, Android Developer Console",
+      "company": "Google",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/96941572574061254",
+      "relevance_score": 65,
+      "priority": "P1",
+      "role_summary": "Senior PM for Android Developer Console \u2014 the tool developers use to publish, manage, and grow their apps on Google Play.",
+      "why_good_fit": "Jay has 5+ years PM experience (requirement is 5 years) and 2+ years of zero-to-one product building (Resso founding team, travel startup). His experience with app ecosystems (Resso on Android, TikTok) gives him developer-side perspective. His understanding of Indian developers and SMBs could be valuable for Developer Console's India market. However, this is a developer tools/B2B product, not a consumer product \u2014 it's a reasonable but not ideal fit. His AI fluency could be relevant for AI-powered developer tools.",
+      "how_to_win": "Frame your Resso experience from the developer/publisher perspective \u2014 you understand what app developers need because you've been one. Highlight your understanding of the Indian developer ecosystem. Emphasize your zero-to-one experience and your ability to build tools that serve diverse user segments (Tier 2/3 developers, not just Silicon Valley). Mention your AI OS as evidence you can envision AI-powered developer tools.",
+      "job_description": "You'll own product areas within Android Developer Console \u2014 the primary tool developers use to publish apps, manage releases, analyze performance, and grow their apps on Google Play. Day-to-day involves defining developer-facing features, working with engineering teams, gathering developer feedback, and shipping tools that improve the developer experience. Success means developers finding it easier and more effective to build and grow apps on Android.",
+      "date_published": "Not listed",
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
+    },
+    {
       "id": "pm-payments-risk-hyderabad",
       "title": "Product Manager, Payments Risk",
       "company": "Google",
@@ -141,22 +141,6 @@
       "why_good_fit": "Jay's SMB and payments-adjacent work at Meta (WhatsApp API, Paid Messaging, SMB advertiser conversion) gives him context on payment ecosystems. His 2.3% India revenue uplift from SMB enforcement work shows he understands how platform-level decisions impact business metrics. The 5-year PM requirement matches. However, this is more platform/infrastructure-focused than consumer-facing, which is a slight mismatch with Jay's strongest skills. His India market intelligence remains valuable for a payments platform serving Indian users.",
       "how_to_win": "Frame your Meta work on WhatsApp business products (API, Paid Messaging) as payments-adjacent platform experience. Lead with the SMB enforcement story to show you understand how platform decisions cascade to business outcomes. Emphasize your understanding of Indian payment behaviour \u2014 informal businesses, voice-led operations, UPI ecosystem dynamics. Position yourself as someone who brings the user perspective to platform decisions.",
       "job_description": "You'll own parts of Google's payments platform \u2014 the infrastructure layer that powers payment experiences across Google products. Day-to-day involves defining platform capabilities, working with engineering teams on scalability and reliability, and ensuring the platform supports product teams building payment features. Success means a robust, scalable payments platform that enables rapid feature development.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z",
-      "analysis_source": "cache"
-    },
-    {
-      "id": "senior-pm-android-developer-console-bengaluru",
-      "title": "Senior Product Manager, Android Developer Console",
-      "company": "Google",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/96941572574061254",
-      "relevance_score": 65,
-      "priority": "P1",
-      "role_summary": "Senior PM for Android Developer Console \u2014 the tool developers use to publish, manage, and grow their apps on Google Play.",
-      "why_good_fit": "Jay has 5+ years PM experience (requirement is 5 years) and 2+ years of zero-to-one product building (Resso founding team, travel startup). His experience with app ecosystems (Resso on Android, TikTok) gives him developer-side perspective. His understanding of Indian developers and SMBs could be valuable for Developer Console's India market. However, this is a developer tools/B2B product, not a consumer product \u2014 it's a reasonable but not ideal fit. His AI fluency could be relevant for AI-powered developer tools.",
-      "how_to_win": "Frame your Resso experience from the developer/publisher perspective \u2014 you understand what app developers need because you've been one. Highlight your understanding of the Indian developer ecosystem. Emphasize your zero-to-one experience and your ability to build tools that serve diverse user segments (Tier 2/3 developers, not just Silicon Valley). Mention your AI OS as evidence you can envision AI-powered developer tools.",
-      "job_description": "You'll own product areas within Android Developer Console \u2014 the primary tool developers use to publish apps, manage releases, analyze performance, and grow their apps on Google Play. Day-to-day involves defining developer-facing features, working with engineering teams, gathering developer feedback, and shipping tools that improve the developer experience. Success means developers finding it easier and more effective to build and grow apps on Android.",
       "date_published": "Not listed",
       "scraped_at": "2026-04-10T16:05:44.579822Z",
       "analysis_source": "cache"
