@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-04-28T02:45:58.829958Z",
+  "last_synced": "2026-04-29T02:45:42.347727Z",
   "roles": [
     {
       "id": "pm-google-play-apps-bengaluru",
@@ -45,22 +45,6 @@
       "why_good_fit": "Jay's SMB over-enforcement work at Meta is an almost perfect analogy \u2014 he identified that Meta's global enforcement model was creating false positives that devastated Indian SMBs, then drove policy change and a new agentic resolution system. This is fundamentally a payments risk problem: balancing fraud prevention with legitimate user access. He understands the India-specific nuances of risk (informal businesses, different CRM patterns, voice-led operations) that global risk models miss. The 3-year minimum experience requirement means Jay comes in as a very senior candidate with 7 years.",
       "how_to_win": "This is your SMB enforcement story on steroids. Lead with: 'At Meta, I discovered that our global enforcement model was over-blocking legitimate Indian SMBs \u2014 I drove the creation of a new product team, an agentic resolution system, and delivered a 2.3% India revenue uplift.' Frame this as a payments risk problem: false positives in enforcement = false positives in fraud detection. Emphasize that you understand the India-specific risk landscape \u2014 informal businesses that look suspicious to global models but are perfectly legitimate. Show you can balance risk mitigation with user growth.",
       "job_description": "You'll own the risk management product surface for Google's payment products \u2014 defining how fraud is detected, how legitimate transactions are protected, and how risk models are tuned. Day-to-day involves working with ML teams on risk models, analyzing fraud patterns, defining policy frameworks, and ensuring the right balance between security and user experience. Success means reducing fraud losses while minimizing false positives that block legitimate users.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z",
-      "analysis_source": "cache"
-    },
-    {
-      "id": "pm-ewallets-bengaluru",
-      "title": "Product Manager, eWallets",
-      "company": "Google",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/106575658812875462",
-      "relevance_score": 75,
-      "priority": "P0",
-      "role_summary": "PM for Google's eWallet products \u2014 digital wallet experiences likely spanning Google Pay and related financial products, with India as a key market.",
-      "why_good_fit": "Jay's deep understanding of Indian digital payment behaviour \u2014 especially among SMBs and informal businesses \u2014 is directly relevant. His Meta SMB work (10M businesses impacted, 2.3% revenue uplift) demonstrates he can identify product gaps in how Indian users interact with digital financial tools. His insight that Indian SMBs operate through voice-led, informal digital patterns is exactly the kind of user intelligence an eWallet PM needs. The 5-year experience requirement matches his ~7 years. His zero-to-one experience (Resso founding team, travel startup) shows he can build new product surfaces.",
-      "how_to_win": "Position yourself as someone who understands how money actually moves in India \u2014 not through global product assumptions, but through on-ground observation. Lead with the bakery story and SMB enforcement work. Emphasize that you've seen firsthand how Indian users (especially Tier 2/3) interact with digital financial tools. Highlight your Resso experience to show you can build consumer products from scratch. If the role involves emerging market expansion, lean into your India market intelligence as a competitive advantage.",
-      "job_description": "You'll own product strategy and execution for Google's eWallet products, likely focused on digital wallet experiences for consumers and merchants. Day-to-day involves defining features, working with engineering and payments infrastructure teams, analyzing transaction data, and driving wallet adoption. Success means growing wallet usage, improving user retention, and expanding the merchant acceptance network.",
       "date_published": "Not listed",
       "scraped_at": "2026-04-10T16:05:44.579822Z",
       "analysis_source": "cache"
