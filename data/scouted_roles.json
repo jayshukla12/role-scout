@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-05-07T14:04:41.839285Z",
+  "last_synced": "2026-05-08T02:47:58.018653Z",
   "roles": [
     {
       "id": "pm-google-play-apps-bengaluru",
@@ -66,22 +66,6 @@
       "analysis_source": "cache"
     },
     {
-      "id": "pm-payments-platform-bengaluru",
-      "title": "Product Manager, Payments Platform",
-      "company": "Google",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/98550632679383750",
-      "relevance_score": 68,
-      "priority": "P1",
-      "role_summary": "PM for Google's payments platform infrastructure \u2014 the underlying systems that power Google Pay and other payment experiences.",
-      "why_good_fit": "Jay's SMB and payments-adjacent work at Meta (WhatsApp API, Paid Messaging, SMB advertiser conversion) gives him context on payment ecosystems. His 2.3% India revenue uplift from SMB enforcement work shows he understands how platform-level decisions impact business metrics. The 5-year PM requirement matches. However, this is more platform/infrastructure-focused than consumer-facing, which is a slight mismatch with Jay's strongest skills. His India market intelligence remains valuable for a payments platform serving Indian users.",
-      "how_to_win": "Frame your Meta work on WhatsApp business products (API, Paid Messaging) as payments-adjacent platform experience. Lead with the SMB enforcement story to show you understand how platform decisions cascade to business outcomes. Emphasize your understanding of Indian payment behaviour \u2014 informal businesses, voice-led operations, UPI ecosystem dynamics. Position yourself as someone who brings the user perspective to platform decisions.",
-      "job_description": "You'll own parts of Google's payments platform \u2014 the infrastructure layer that powers payment experiences across Google products. Day-to-day involves defining platform capabilities, working with engineering teams on scalability and reliability, and ensuring the platform supports product teams building payment features. Success means a robust, scalable payments platform that enables rapid feature development.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z",
-      "analysis_source": "cache"
-    },
-    {
       "id": "pm-ai-gaming-google-play-bengaluru",
       "title": "Product Manager, AI Gaming, Google Play",
       "company": "Google",
@@ -125,22 +109,6 @@
       "why_good_fit": "Jay's Shoppertainment work at Meta (commerce + entertainment convergence) is directly relevant to mCommerce. His understanding of Indian e-commerce behaviour, SMB digital commerce patterns, and social commerce dynamics maps well. His experience with Indian consumer segments (Tier 2/3, GenZ) is valuable for mCommerce growth in India. The 6-year marketing requirement is a stretch, but his product and growth experience is transferable. His cross-functional project management experience matches.",
       "how_to_win": "Lead with Shoppertainment \u2014 you helped define Meta India's biggest monetisation opportunity at the intersection of commerce and entertainment. Frame your SMB work as understanding how Indian merchants go digital. Highlight your understanding of Indian mCommerce dynamics \u2014 UPI adoption, social commerce, WhatsApp-based selling. Position yourself as someone who brings deep India commerce insights to Google Play's mCommerce strategy.",
       "job_description": "You'll own GTM marketing strategy for mobile commerce apps on Google Play \u2014 helping mCommerce apps grow their presence and user base on the platform. Day-to-day involves developing marketing programs, working with app developers, analyzing marketplace data, and driving mCommerce app adoption. Success means growing the mCommerce app ecosystem on Google Play.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z",
-      "analysis_source": "cache"
-    },
-    {
-      "id": "senior-associate-gtm-strategy-ops-gurugram",
-      "title": "Senior Associate, Go-to-Market Business Strategy and Operations",
-      "company": "Google",
-      "location": "Gurugram, Haryana, India",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/104774109010764486",
-      "relevance_score": 57,
-      "priority": "P1",
-      "role_summary": "Senior Associate in GTM Strategy & Operations \u2014 supporting go-to-market strategy for Google's business products, likely Ads or Cloud.",
-      "why_good_fit": "Jay's experience with GTM strategy (Shoppertainment, SMB advertiser conversion, MetaAI India growth) is relevant. His 4+ years of strategy experience matches the requirement. His India market intelligence could be valuable for GTM strategy in India. However, 'Senior Associate' may be a step down in seniority for someone with 7 years of experience, and the role may be more junior than Jay's target. The Gurugram location is also a concern for remote preference.",
-      "how_to_win": "Frame your Meta IPGS work as GTM strategy \u2014 you identified market opportunities, built business cases, and drove product execution. Highlight your Shoppertainment work as GTM strategy for a new monetisation vertical. Emphasize your analytical skills and ability to size opportunities. However, consider whether this role's seniority matches your career trajectory before investing application energy.",
-      "job_description": "You'll support go-to-market strategy and operations for Google's business products \u2014 analyzing market opportunities, building business cases, and driving operational execution. Day-to-day involves strategic analysis, cross-functional coordination, and operational planning. Success means effective GTM execution that drives business growth.",
       "date_published": "Not listed",
       "scraped_at": "2026-04-10T16:05:44.579822Z",
       "analysis_source": "cache"
