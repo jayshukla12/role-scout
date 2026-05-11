@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-05-11T02:57:07.151153Z",
+  "last_synced": "2026-05-11T14:47:23.263699Z",
   "roles": [
     {
       "id": "pm-google-play-apps-bengaluru",
@@ -82,38 +82,6 @@
       "analysis_source": "cache"
     },
     {
-      "id": "pmm-google-play-core-growth-bengaluru",
-      "title": "Product Marketing Manager, Google Play Core Growth",
-      "company": "Google",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/115073144233829062",
-      "relevance_score": 65,
-      "priority": "P1",
-      "role_summary": "Product Marketing Manager for Google Play's core growth initiatives \u2014 driving user and developer growth for the Play ecosystem.",
-      "why_good_fit": "The 'Core Growth' mandate aligns with Jay's growth-oriented experience. His Resso scaling story (alpha \u2192 India's largest music streaming app) is directly relevant to platform growth. His understanding of Indian app ecosystem dynamics, Tier 2/3 user acquisition, and regional content preferences maps to Play's India growth opportunity. The 6-year marketing requirement is a stretch \u2014 same caveat as the Search PMM role. His cross-functional project management experience matches the requirement.",
-      "how_to_win": "Lead with Resso's growth story \u2014 you helped scale a platform from zero to India's #1 in its category. Frame your Meta IPGS work as growth marketing in practice. Highlight your understanding of what drives app adoption in India's Tier 2/3 markets. Emphasize your competitive intelligence skills (you monitored competitors daily at Meta) as relevant to growth strategy. Position yourself as someone who brings product intuition to marketing decisions.",
-      "job_description": "You'll own growth marketing strategy for Google Play \u2014 defining how to acquire and retain users and developers on the platform. Day-to-day involves developing growth campaigns, working with product teams on feature launches, analyzing growth metrics, and driving adoption. Success means growing Play's user base and developer ecosystem through effective marketing.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z",
-      "analysis_source": "cache"
-    },
-    {
-      "id": "mcommerce-marketing-manager-google-play-bengaluru",
-      "title": "mCommerce Marketing Manager, Apps Go-To-Market, Google Play",
-      "company": "Google",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/126166288845152966",
-      "relevance_score": 62,
-      "priority": "P1",
-      "role_summary": "Marketing Manager for mobile commerce apps on Google Play \u2014 driving GTM strategy for mCommerce apps in the Play ecosystem.",
-      "why_good_fit": "Jay's Shoppertainment work at Meta (commerce + entertainment convergence) is directly relevant to mCommerce. His understanding of Indian e-commerce behaviour, SMB digital commerce patterns, and social commerce dynamics maps well. His experience with Indian consumer segments (Tier 2/3, GenZ) is valuable for mCommerce growth in India. The 6-year marketing requirement is a stretch, but his product and growth experience is transferable. His cross-functional project management experience matches.",
-      "how_to_win": "Lead with Shoppertainment \u2014 you helped define Meta India's biggest monetisation opportunity at the intersection of commerce and entertainment. Frame your SMB work as understanding how Indian merchants go digital. Highlight your understanding of Indian mCommerce dynamics \u2014 UPI adoption, social commerce, WhatsApp-based selling. Position yourself as someone who brings deep India commerce insights to Google Play's mCommerce strategy.",
-      "job_description": "You'll own GTM marketing strategy for mobile commerce apps on Google Play \u2014 helping mCommerce apps grow their presence and user base on the platform. Day-to-day involves developing marketing programs, working with app developers, analyzing marketplace data, and driving mCommerce app adoption. Success means growing the mCommerce app ecosystem on Google Play.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z",
-      "analysis_source": "cache"
-    },
-    {
       "id": "openai-ai-deployment-engineer-startups",
       "title": "AI Deployment Engineer, Startups",
       "company": "OpenAI",
@@ -141,22 +109,6 @@
       "why_good_fit": "Jay has relevant experience working with SMBs and enterprises on AI adoption (MetaAI India field work covering enterprises, SMBs, and AI enthusiasts). His understanding of how Indian businesses actually operate (voice-led, informal digital literacy) is valuable for deployment strategy. His AI fluency is exceptional (top 5% Metamate user, personal AI OS with multiple agents). The India-remote setup is ideal. However, this is a Technical Success role \u2014 likely more customer-facing and implementation-focused than Jay's core product/growth skillset. His experience is more market intelligence and product strategy than deployment management.",
       "how_to_win": "Lean into your understanding of how Indian businesses adopt technology \u2014 the SMB enforcement story shows you understand the gap between how global products assume Indian businesses work vs. reality. Highlight your AI OS as proof you can deeply understand deployment challenges. Position your field work with enterprises and SMBs during MetaAI India as direct experience understanding AI adoption barriers. Be transparent that your strength is the market intelligence and user understanding layer, and frame that as the missing piece in deployment success \u2014 technical deployment fails when you don't understand the user context.",
       "job_description": "This role manages the deployment and adoption of OpenAI's AI products for customers in India. Day-to-day likely involves working with Indian enterprises and startups to successfully integrate OpenAI's APIs, troubleshooting adoption challenges, and ensuring customers achieve value from the products. Success looks like high customer satisfaction, successful deployments, and growing usage.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T17:16:01.174015Z",
-      "analysis_source": "cache"
-    },
-    {
-      "id": "openai-communications-manager-india",
-      "title": "Communications Manager, India",
-      "company": "OpenAI",
-      "location": "India - Remote",
-      "url": "https://openai.com/careers/communications-manager-india-india-remote/",
-      "relevance_score": 40,
-      "priority": "P2",
-      "role_summary": "Manages OpenAI's public communications, media relations, and narrative in India \u2014 a PR/comms role rather than a product or growth role.",
-      "why_good_fit": "While Jay has strong writing skills (insight writing, competitive intelligence write-ups, strategic narratives) and deep India market context, this is fundamentally a communications/PR role. It lacks the product, growth, and strategy components that are core to Jay's experience and career trajectory. The India-remote setup is ideal, and OpenAI is a target company, but the role type doesn't leverage Jay's core strengths in product growth and market intelligence. His conciseness feedback area also works against a comms-heavy role.",
-      "how_to_win": "Not recommended as a primary application. If Jay decides to apply, he should frame his insight writing and stakeholder influence work at Meta as communications-adjacent \u2014 he's been shaping narratives about India for global product teams. But this would be a career pivot, not a natural progression.",
-      "job_description": "This role owns OpenAI's communications strategy in India \u2014 managing media relations, public narratives, crisis communications, and brand positioning. Day-to-day involves working with journalists, crafting press materials, managing public perception, and coordinating with global comms teams. Success looks like positive brand perception and effective narrative management in India.",
       "date_published": "Not listed",
       "scraped_at": "2026-04-10T17:16:01.174015Z",
       "analysis_source": "cache"
