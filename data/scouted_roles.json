@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-05-14T14:07:41.110706Z",
+  "last_synced": "2026-05-15T02:56:56.297058Z",
   "roles": [
     {
       "id": "pm-google-play-apps-bengaluru",
@@ -66,22 +66,6 @@
       "analysis_source": "cache"
     },
     {
-      "id": "pm-ai-gaming-google-play-bengaluru",
-      "title": "Product Manager, AI Gaming, Google Play",
-      "company": "Google",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/84526181478474438",
-      "relevance_score": 72,
-      "priority": "P0",
-      "role_summary": "PM for AI-powered gaming experiences on Google Play \u2014 at the intersection of AI product development and the gaming ecosystem on Android.",
-      "why_good_fit": "This role sits at the AI + consumer product intersection that Jay targets. His AI fluency (top 5% Metamate user, personal AI OS, 25hrs/week on AI tools) demonstrates he can think about AI product applications deeply. His consumer product experience (Resso, Meta consumer products) shows he understands user engagement and retention. India is the world's largest mobile gaming market \u2014 Jay's Tier 2/3 India user expertise is directly relevant. The 5-year PM requirement matches his ~7 years. His zero-to-one experience (Resso founding team) maps to building new AI-powered gaming features.",
-      "how_to_win": "Lead with your AI fluency story \u2014 you built a personal AI operating system on Metamate, automating 80% of tasks, top 5% user globally. Then connect to your consumer product experience: Resso's ML-driven recommendation engine is analogous to AI-powered game discovery. Highlight your understanding of Indian mobile gaming users (Tier 2/3, regional, GenZ). Frame yourself as someone who can bridge AI capabilities with consumer product intuition \u2014 not just an engineer, but someone who understands what AI features users actually want.",
-      "job_description": "You'll own AI-powered gaming features on Google Play \u2014 think AI-driven game discovery, personalized recommendations, or AI-enhanced gaming experiences. Day-to-day involves defining AI product strategy for gaming, working with ML and engineering teams, running user research with gamers, and shipping features that grow gaming engagement on Play. Success means leveraging AI to meaningfully improve the gaming experience and drive growth metrics.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z",
-      "analysis_source": "cache"
-    },
-    {
       "id": "openai-ai-deployment-engineer-startups",
       "title": "AI Deployment Engineer, Startups",
       "company": "OpenAI",
@@ -109,22 +93,6 @@
       "why_good_fit": "Jay has relevant experience working with SMBs and enterprises on AI adoption (MetaAI India field work covering enterprises, SMBs, and AI enthusiasts). His understanding of how Indian businesses actually operate (voice-led, informal digital literacy) is valuable for deployment strategy. His AI fluency is exceptional (top 5% Metamate user, personal AI OS with multiple agents). The India-remote setup is ideal. However, this is a Technical Success role \u2014 likely more customer-facing and implementation-focused than Jay's core product/growth skillset. His experience is more market intelligence and product strategy than deployment management.",
       "how_to_win": "Lean into your understanding of how Indian businesses adopt technology \u2014 the SMB enforcement story shows you understand the gap between how global products assume Indian businesses work vs. reality. Highlight your AI OS as proof you can deeply understand deployment challenges. Position your field work with enterprises and SMBs during MetaAI India as direct experience understanding AI adoption barriers. Be transparent that your strength is the market intelligence and user understanding layer, and frame that as the missing piece in deployment success \u2014 technical deployment fails when you don't understand the user context.",
       "job_description": "This role manages the deployment and adoption of OpenAI's AI products for customers in India. Day-to-day likely involves working with Indian enterprises and startups to successfully integrate OpenAI's APIs, troubleshooting adoption challenges, and ensuring customers achieve value from the products. Success looks like high customer satisfaction, successful deployments, and growing usage.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T17:16:01.174015Z",
-      "analysis_source": "cache"
-    },
-    {
-      "id": "openai-consumer-marketing-manager-india",
-      "title": "Consumer Marketing Manager, India",
-      "company": "OpenAI",
-      "location": "India - Remote",
-      "url": "https://openai.com/careers/consumer-marketing-manager-india-india-remote/",
-      "relevance_score": 75,
-      "priority": "P0",
-      "role_summary": "Leads consumer marketing for OpenAI's products (primarily ChatGPT) in India \u2014 driving awareness, adoption, and engagement through India-specific marketing strategies.",
-      "why_good_fit": "Jay's superpower is understanding Indian consumer segments deeply \u2014 GenZ (GenZ Product Council member, 25 globally), Tier 2/3 users (Resso thesis), regional/vernacular users, and SMBs. His MetaAI field work uncovered that Indian GenZ AI users prioritize language tone and persona over factual accuracy \u2014 a critical marketing insight for ChatGPT India positioning. His experience at Meta includes working with International Marketing teams on non-product lever execution. The Resso scaling story demonstrates he understands how to position and grow a consumer product in India against established competitors. Remote role in India checks his P0 requirement. While this is marketing-titled rather than PM, it has a strong product lens given it's about consumer AI adoption in India.",
-      "how_to_win": "Position yourself as someone who doesn't just market products but understands the Indian consumer psyche deeply enough to shape the marketing strategy from first principles. Lead with the MetaAI insight about language as a growth lever \u2014 this is a marketing goldmine for ChatGPT India. Share the Resso story: how you understood that Tier 2/3 Indian users needed a fundamentally different product positioning than what Spotify offered. Emphasize your GenZ Product Council membership and the nuanced Indian GenZ behaviours you've mapped. Frame your pitch: 'I know which Indian users will adopt ChatGPT next, why they'll adopt it, and what message will resonate \u2014 because I've spent years in the field with these exact users.'",
-      "job_description": "This role owns consumer marketing strategy for OpenAI in India \u2014 crafting campaigns, positioning, and go-to-market strategies that drive ChatGPT awareness and adoption among Indian consumers. Day-to-day involves market research, campaign development, cross-functional collaboration with product and growth teams, and measuring marketing effectiveness. Success looks like growing ChatGPT's consumer brand and user base in India.",
       "date_published": "Not listed",
       "scraped_at": "2026-04-10T17:16:01.174015Z",
       "analysis_source": "cache"
