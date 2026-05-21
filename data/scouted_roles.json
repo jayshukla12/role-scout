@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-05-20T15:00:25.778888Z",
+  "last_synced": "2026-05-21T03:31:38.611059Z",
   "roles": [
     {
       "id": "pm-google-play-apps-bengaluru",
@@ -63,22 +63,6 @@
       "job_description": "AI Deployment Engineer, Startups. Technical Success team. India - Remote. Limited details available.",
       "date_published": null,
       "scraped_at": null,
-      "analysis_source": "cache"
-    },
-    {
-      "id": "openai-ai-deployment-manager-india",
-      "title": "AI Deployment Manager - India",
-      "company": "OpenAI",
-      "location": "India - Remote",
-      "url": "https://openai.com/careers/ai-deployment-manager-india-india-remote/",
-      "relevance_score": 62,
-      "priority": "P1",
-      "role_summary": "Manages AI deployment and technical success for OpenAI's enterprise/startup customers in India \u2014 ensuring successful adoption and integration of OpenAI's APIs and products.",
-      "why_good_fit": "Jay has relevant experience working with SMBs and enterprises on AI adoption (MetaAI India field work covering enterprises, SMBs, and AI enthusiasts). His understanding of how Indian businesses actually operate (voice-led, informal digital literacy) is valuable for deployment strategy. His AI fluency is exceptional (top 5% Metamate user, personal AI OS with multiple agents). The India-remote setup is ideal. However, this is a Technical Success role \u2014 likely more customer-facing and implementation-focused than Jay's core product/growth skillset. His experience is more market intelligence and product strategy than deployment management.",
-      "how_to_win": "Lean into your understanding of how Indian businesses adopt technology \u2014 the SMB enforcement story shows you understand the gap between how global products assume Indian businesses work vs. reality. Highlight your AI OS as proof you can deeply understand deployment challenges. Position your field work with enterprises and SMBs during MetaAI India as direct experience understanding AI adoption barriers. Be transparent that your strength is the market intelligence and user understanding layer, and frame that as the missing piece in deployment success \u2014 technical deployment fails when you don't understand the user context.",
-      "job_description": "This role manages the deployment and adoption of OpenAI's AI products for customers in India. Day-to-day likely involves working with Indian enterprises and startups to successfully integrate OpenAI's APIs, troubleshooting adoption challenges, and ensuring customers achieve value from the products. Success looks like high customer satisfaction, successful deployments, and growing usage.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T17:16:01.174015Z",
       "analysis_source": "cache"
     }
   ]
