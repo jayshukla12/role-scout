@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-05-22T14:36:24.581328Z",
+  "last_synced": "2026-05-23T02:49:39.564560Z",
   "roles": [
     {
       "id": "pm-google-play-apps-bengaluru",
@@ -18,22 +18,6 @@
       "analysis_source": "cache"
     },
     {
-      "id": "pm-cloud-database-bengaluru",
-      "title": "Product Manager, Cloud Database",
-      "company": "Google",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/139109108367139526",
-      "relevance_score": 50,
-      "priority": "P1",
-      "role_summary": "PM for Google Cloud's database products \u2014 managing database services for enterprise Cloud customers.",
-      "why_good_fit": "Jay meets the 5-year PM experience requirement and has zero-to-one building experience. However, this role requires 2 years of database/analytics/big data product experience, which Jay lacks. It's a deeply technical B2B infrastructure role without India market growth or AI-native components. His consumer product and India market strengths don't translate strongly here.",
-      "how_to_win": "This is a stretch role. If applying, emphasize your technical product intuition and ability to learn domains quickly. Frame your data analysis work at Meta (Unidash, opportunity sizing) as adjacent. Highlight your AI-assisted data analysis capabilities. However, this is likely not the best use of Jay's application energy.",
-      "job_description": "You'll own Google Cloud database products \u2014 managed database services used by enterprise customers for their applications. Day-to-day involves defining database product roadmaps, working with database engineering teams, gathering enterprise customer requirements, and shipping features. Success means growing database service adoption and customer satisfaction.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z",
-      "analysis_source": "cache"
-    },
-    {
       "id": "pm-payments-risk-hyderabad",
       "title": "Product Manager, Payments Risk",
       "company": "Google",
@@ -45,6 +29,22 @@
       "why_good_fit": "Jay's SMB over-enforcement work at Meta is an almost perfect analogy \u2014 he identified that Meta's global enforcement model was creating false positives that devastated Indian SMBs, then drove policy change and a new agentic resolution system. This is fundamentally a payments risk problem: balancing fraud prevention with legitimate user access. He understands the India-specific nuances of risk (informal businesses, different CRM patterns, voice-led operations) that global risk models miss. The 3-year minimum experience requirement means Jay comes in as a very senior candidate with 7 years.",
       "how_to_win": "This is your SMB enforcement story on steroids. Lead with: 'At Meta, I discovered that our global enforcement model was over-blocking legitimate Indian SMBs \u2014 I drove the creation of a new product team, an agentic resolution system, and delivered a 2.3% India revenue uplift.' Frame this as a payments risk problem: false positives in enforcement = false positives in fraud detection. Emphasize that you understand the India-specific risk landscape \u2014 informal businesses that look suspicious to global models but are perfectly legitimate. Show you can balance risk mitigation with user growth.",
       "job_description": "You'll own the risk management product surface for Google's payment products \u2014 defining how fraud is detected, how legitimate transactions are protected, and how risk models are tuned. Day-to-day involves working with ML teams on risk models, analyzing fraud patterns, defining policy frameworks, and ensuring the right balance between security and user experience. Success means reducing fraud losses while minimizing false positives that block legitimate users.",
+      "date_published": "Not listed",
+      "scraped_at": "2026-04-10T16:05:44.579822Z",
+      "analysis_source": "cache"
+    },
+    {
+      "id": "pm-cloud-database-bengaluru",
+      "title": "Product Manager, Cloud Database",
+      "company": "Google",
+      "location": "Bengaluru, Karnataka, India",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/139109108367139526",
+      "relevance_score": 50,
+      "priority": "P1",
+      "role_summary": "PM for Google Cloud's database products \u2014 managing database services for enterprise Cloud customers.",
+      "why_good_fit": "Jay meets the 5-year PM experience requirement and has zero-to-one building experience. However, this role requires 2 years of database/analytics/big data product experience, which Jay lacks. It's a deeply technical B2B infrastructure role without India market growth or AI-native components. His consumer product and India market strengths don't translate strongly here.",
+      "how_to_win": "This is a stretch role. If applying, emphasize your technical product intuition and ability to learn domains quickly. Frame your data analysis work at Meta (Unidash, opportunity sizing) as adjacent. Highlight your AI-assisted data analysis capabilities. However, this is likely not the best use of Jay's application energy.",
+      "job_description": "You'll own Google Cloud database products \u2014 managed database services used by enterprise customers for their applications. Day-to-day involves defining database product roadmaps, working with database engineering teams, gathering enterprise customer requirements, and shipping features. Success means growing database service adoption and customer satisfaction.",
       "date_published": "Not listed",
       "scraped_at": "2026-04-10T16:05:44.579822Z",
       "analysis_source": "cache"
