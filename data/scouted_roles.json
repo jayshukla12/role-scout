@@ -1,22 +1,6 @@
 {
-  "last_synced": "2026-05-26T02:57:44.665250Z",
+  "last_synced": "2026-05-26T15:22:23.012079Z",
   "roles": [
-    {
-      "id": "pm-google-play-apps-bengaluru",
-      "title": "Product Manager, Google Play Apps",
-      "company": "Google",
-      "location": "Bengaluru, Karnataka, India",
-      "url": "https://www.google.com/about/careers/applications/jobs/results/83316237651583686",
-      "relevance_score": 73,
-      "priority": "P0",
-      "role_summary": "PM for Google Play's apps ecosystem \u2014 managing the app discovery, distribution, and developer experience on Android's primary app marketplace.",
-      "why_good_fit": "Google Play is a massive consumer platform with deep India relevance \u2014 India is Android's largest market. Jay's experience scaling Resso on Android (Tier 2/3 India users, ML-driven discovery) maps to app discovery challenges. His understanding of Indian consumer segments (regional users, GenZ, informal businesses) is valuable for Play's India growth. His ByteDance experience with app ecosystem dynamics (TikTok, Resso) gives him platform-level thinking. 5 years PM experience required matches his ~7 years.",
-      "how_to_win": "Frame your Resso experience as app ecosystem expertise \u2014 you built and scaled an app from alpha to India's #1 in its category on Android. You understand app discovery, user acquisition, and retention in the Indian market. Highlight your insight about Tier 2/3 users being underserved by global products \u2014 this applies directly to Google Play's India opportunity. Mention your competitive intelligence work (TikTok re-entry strategy) to show you understand platform dynamics. Emphasize your AI fluency as relevant to AI-powered app discovery.",
-      "job_description": "You'll own a product area within Google Play Apps \u2014 the world's largest app marketplace. Day-to-day involves defining features that improve app discovery, developer tools, or user engagement, working with engineering teams, analyzing marketplace data, and driving growth metrics. Success means growing app installs, improving developer satisfaction, and enhancing the user experience of finding and using apps.",
-      "date_published": "Not listed",
-      "scraped_at": "2026-04-10T16:05:44.579822Z",
-      "analysis_source": "cache"
-    },
     {
       "id": "pm-payments-risk-hyderabad",
       "title": "Product Manager, Payments Risk",
